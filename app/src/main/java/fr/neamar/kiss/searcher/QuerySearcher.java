@@ -52,7 +52,7 @@ public class QuerySearcher extends Searcher {
         for (Pojo pojo : pojos) {
             if (pojo.isDisabled()) {
                 // Give penalty for disabled items, these should not be preferred
-                pojo.relevance -= 200;
+                pojo.relevance -= 0;
             } else {
                 // Give a boost if item was previously selected for this query
                 Integer value = knownIds.get(pojo.id);

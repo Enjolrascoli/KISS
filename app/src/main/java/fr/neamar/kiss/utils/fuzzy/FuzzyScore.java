@@ -1,5 +1,7 @@
 package fr.neamar.kiss.utils.fuzzy;
 
+import fr.neamar.kiss.pojo.Pojo;
+
 public interface FuzzyScore {
 
     FuzzyScore setFullWordBonus(int full_word_bonus);
@@ -21,4 +23,15 @@ public interface FuzzyScore {
     MatchInfo match(CharSequence text);
 
     MatchInfo match(int[] text);
+    
+    /**
+     * Match pinyin against a Pojo's name, pinyin, and pinyin short forms.
+     * Default implementation just matches against the normalized name.
+     *
+     * @param pojo the Pojo to match against
+     * @return {@link MatchInfo} with the best match found
+     */
+    default MatchInfo matchPinyin(Pojo pojo) {
+        return match(pojo.normalizedName.codePoints);
+    }
 }

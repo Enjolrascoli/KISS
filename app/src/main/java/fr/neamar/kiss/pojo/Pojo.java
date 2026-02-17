@@ -1,6 +1,7 @@
 package fr.neamar.kiss.pojo;
 
 import fr.neamar.kiss.normalizer.StringNormalizer;
+import fr.neamar.kiss.utils.PinyinUtils;
 import fr.neamar.kiss.utils.UserHandle;
 import fr.neamar.kiss.utils.fuzzy.MatchInfo;
 
@@ -18,6 +19,12 @@ public abstract class Pojo {
     public int relevance = 0;
     // Name for this pojo, e.g. app name
     private String name = "";
+    // Pinyin full form for Chinese characters (e.g., "淘宝" -> "taobao")
+    // Used for pinyin search support
+    private String pinyin = null;
+    // Pinyin short form for Chinese characters (e.g., "淘宝" -> "tb")
+    // Used for pinyin abbreviation search support
+    private String pinyinShort = null;
 
     public Pojo(String id) {
         this.id = id;
@@ -54,6 +61,32 @@ public abstract class Pojo {
             this.name = name;
             this.normalizedName = null;
         }
+    }
+    
+    /**
+     * Get the pinyin full form of the name.
+     * This is cached after first computation for performance.
+     * 
+     * @return pinyin string (e.g., "淘宝" -> "taobao")
+     */
+    public String getPinyin() {
+        if (pinyin == null && name != null) {
+            pinyin = PinyinUtils.toPinyin(name);
+        }
+        return pinyin != null ? pinyin : "";
+    }
+    
+    /**
+     * Get the pinyin short form of the name.
+     * This is cached after first computation for performance.
+     * 
+     * @return pinyin short string (e.g., "淘宝" -> "tb")
+     */
+    public String getPinyinShort() {
+        if (pinyinShort == null && name != null) {
+            pinyinShort = PinyinUtils.toPinyinShort(name);
+        }
+        return pinyinShort != null ? pinyinShort : "";
     }
 
     /**

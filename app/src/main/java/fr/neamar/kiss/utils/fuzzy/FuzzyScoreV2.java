@@ -1,7 +1,6 @@
 package fr.neamar.kiss.utils.fuzzy;
 
-import java.util.ArrayList;
-import java.util.List;
+import fr.neamar.kiss.pojo.Pojo;
 
 /**
  * A Sublime Text inspired fuzzy match algorithm
@@ -142,7 +141,7 @@ public class FuzzyScoreV2 implements FuzzyScore {
         int recursionCount = 0;
         int recursionLimit = 7; // originally 10
         int maxMatches = Math.min(patternLength, str.length);
-        List<Integer> matches = new ArrayList<>();
+        java.util.List<Integer> matches = new java.util.ArrayList<>();
 
         MatchInfo matchInfo = matchRecursive(
                 str,
@@ -162,6 +161,44 @@ public class FuzzyScoreV2 implements FuzzyScore {
             this.matchInfo.matchedIndices.addAll(matches);
         }
         return this.matchInfo;
+    }
+
+    /**
+     * Match pinyin against a Pojo's name, pinyin, and pinyin short forms.
+     * Returns the best match among all three.
+     *
+     * @param pojo the Pojo to match against
+     * @return {@link MatchInfo} with the best match found
+     */
+    public MatchInfo matchPinyin(Pojo pojo) {
+        // Try matching against the original name first
+        MatchInfo nameMatch = match(pojo.normalizedName.codePoints);
+        
+        if (nameMatch.match) {
+            // If we have a match on the original name, return it
+            return nameMatch;
+        }
+        
+        // Try matching against full pinyin
+        String pinyin = pojo.getPinyin();
+        if (!pinyin.isEmpty()) {
+            MatchInfo pinyinMatch = match(pinyin);
+            if (pinyinMatch.match && pinyinMatch.score > nameMatch.score) {
+                return pinyinMatch;
+            }
+        }
+        
+        // Try matching against pinyin short form
+        String pinyinShort = pojo.getPinyinShort();
+        if (!pinyinShort.isEmpty()) {
+            MatchInfo pinyinShortMatch = match(pinyinShort);
+            if (pinyinShortMatch.match && pinyinShortMatch.score > nameMatch.score) {
+                return pinyinShortMatch;
+            }
+        }
+        
+        // Return the best match (or unmatched if nothing matched)
+        return nameMatch;
     }
 
     private MatchInfo matchRecursive(

@@ -159,7 +159,7 @@ public abstract class Result<T extends Pojo> {
 
     protected boolean displayHighlighted(StringNormalizer.Result normalized, String text, FuzzyScore fuzzyScore,
                                TextView view, Context context) {
-        MatchInfo matchInfo = fuzzyScore.match(normalized.codePoints);
+        MatchInfo matchInfo = fuzzyScore.matchPinyin(pojo);
 
         if (!matchInfo.match) {
             view.setText(text);
