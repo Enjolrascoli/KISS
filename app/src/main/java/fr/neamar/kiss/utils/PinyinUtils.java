@@ -28,10 +28,7 @@ public class PinyinUtils {
         StringBuilder pinyinBuilder = new StringBuilder();
         for (int i = 0; i < chinese.length(); i++) {
             char c = chinese.charAt(i);
-            // Pinyin.toPinyin(char) returns uppercase pinyin for Chinese characters
-            // or the original character for non-Chinese characters
             String pinyin = Pinyin.toPinyin(c);
-            // Convert to lowercase for case-insensitive search
             pinyinBuilder.append(pinyin.toLowerCase());
         }
         return pinyinBuilder.toString();
@@ -53,8 +50,6 @@ public class PinyinUtils {
         StringBuilder pinyinShortBuilder = new StringBuilder();
         for (int i = 0; i < chinese.length(); i++) {
             char c = chinese.charAt(i);
-            // Pinyin.toPinyin(char) returns uppercase pinyin for Chinese characters
-            // Take only the first letter and convert to lowercase
             String pinyin = Pinyin.toPinyin(c);
             if (!pinyin.isEmpty()) {
                 pinyinShortBuilder.append(Character.toLowerCase(pinyin.charAt(0)));

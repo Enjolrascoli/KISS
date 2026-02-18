@@ -142,7 +142,7 @@ public class FuzzyScoreV2 implements FuzzyScore {
     @Override
     public MatchInfo match(int[] str) {
         int recursionCount = 0;
-        int recursionLimit = 15; // Increased from 7 to support longer pinyin matches
+        int recursionLimit = 15;
         int maxMatches = Math.min(patternLength, str.length);
         java.util.List<Integer> matches = new java.util.ArrayList<>();
 
@@ -165,8 +165,7 @@ public class FuzzyScoreV2 implements FuzzyScore {
             this.matchInfo.matchedIndices.clear();
             this.matchInfo.matchedIndices.addAll(matches);
         }
-        
-        // Return a NEW MatchInfo object to avoid reference issues
+
         return new MatchInfo(matchInfo.match, matchInfo.score);
     }
 
@@ -179,44 +178,31 @@ public class FuzzyScoreV2 implements FuzzyScore {
      */
     public MatchInfo matchPinyin(Pojo pojo) {
         MatchInfo bestMatch = MatchInfo.UNMATCHED;
-        
-        String pojoName = pojo.getName();
-        String pinyin = pojo.getPinyin();
-        String pinyinShort = pojo.getPinyinShort();
-        android.util.Log.d("PinyinMatch", "=== Pinyin Match Debug ===");
-        android.util.Log.d("PinyinMatch", "Pojo name: " + pojoName);
-        android.util.Log.d("PinyinMatch", "Pinyin: " + pinyin + " (length: " + pinyin.length() + ")");
-        android.util.Log.d("PinyinMatch", "PinyinShort: " + pinyinShort);
-        android.util.Log.d("PinyinMatch", "Pattern length: " + patternLength);
 
         // Try matching against the original name first
         MatchInfo nameMatch = match(pojo.normalizedName.codePoints);
-        android.util.Log.d("PinyinMatch", "Name match: " + nameMatch.match + ", score: " + nameMatch.score);
         if (nameMatch.match) {
             bestMatch = nameMatch;
         }
 
         // Try matching against full pinyin
+        String pinyin = pojo.getPinyin();
         if (!pinyin.isEmpty()) {
             MatchInfo pinyinMatch = match(pinyin);
-            android.util.Log.d("PinyinMatch", "Pinyin match: " + pinyinMatch.match + ", score: " + pinyinMatch.score);
             if (pinyinMatch.match && pinyinMatch.score > bestMatch.score) {
-                android.util.Log.d("PinyinMatch", "Using pinyin match (better score)");
                 bestMatch = pinyinMatch;
             }
         }
 
         // Try matching against pinyin short form
+        String pinyinShort = pojo.getPinyinShort();
         if (!pinyinShort.isEmpty()) {
             MatchInfo pinyinShortMatch = match(pinyinShort);
-            android.util.Log.d("PinyinMatch", "PinyinShort match: " + pinyinShortMatch.match + ", score: " + pinyinShortMatch.score);
             if (pinyinShortMatch.match && pinyinShortMatch.score > bestMatch.score) {
-                android.util.Log.d("PinyinMatch", "Using pinyinShort match (better score)");
                 bestMatch = pinyinShortMatch;
             }
         }
 
-        android.util.Log.d("PinyinMatch", "Best match: " + bestMatch.match + ", score: " + bestMatch.score);
         return bestMatch;
     }
 
@@ -240,7 +226,7 @@ public class FuzzyScoreV2 implements FuzzyScore {
         if (patternCurIndex == patternLength) {
             return new MatchInfo(true, 0);
         }
-        
+
         // Return if we reached end of string but still have pattern characters to match
         if (strCurrIndex == str.length) {
             return MatchInfo.UNMATCHED;
@@ -269,7 +255,7 @@ public class FuzzyScoreV2 implements FuzzyScore {
                 List<Integer> recursiveMatches = new ArrayList<>();
                 MatchInfo recursiveResult = matchRecursive(
                         str,
-                        patternCurIndex + 1,  // Advance pattern index
+                        patternCurIndex + 1,
                         strCurrIndex + 1,
                         matches,
                         recursiveMatches,

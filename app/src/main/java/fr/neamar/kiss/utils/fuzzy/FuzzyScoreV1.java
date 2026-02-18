@@ -272,7 +272,6 @@ public class FuzzyScoreV1 implements FuzzyScore {
 
         matchInfo.match = patternIdx == patternLength;
         matchInfo.score = score;
-        // Return a NEW MatchInfo object to avoid reference issues
         return new MatchInfo(matchInfo.match, matchInfo.score);
     }
 
