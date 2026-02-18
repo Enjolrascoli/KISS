@@ -255,7 +255,7 @@ public class FuzzyScoreV2 implements FuzzyScore {
                 List<Integer> recursiveMatches = new ArrayList<>();
                 MatchInfo recursiveResult = matchRecursive(
                         str,
-                        patternCurIndex + 1,
+                        patternCurIndex,
                         strCurrIndex + 1,
                         matches,
                         recursiveMatches,
