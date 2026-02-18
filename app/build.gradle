@@ -72,7 +72,7 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.9.1'
     implementation 'androidx.appcompat:appcompat:1.7.1'
     implementation 'androidx.preference:preference:1.2.1'
-    implementation 'com.github.promeg:tinypinyin:2.0.3'
+    implementation 'com.github.promeG.TinyPinyin:tinypinyin-android-asset-lexicons:v2.0.3'
 
     testImplementation 'org.junit.jupiter:junit-jupiter:6.0.3'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
