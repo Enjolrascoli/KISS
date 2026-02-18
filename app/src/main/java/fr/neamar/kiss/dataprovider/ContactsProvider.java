@@ -117,6 +117,10 @@ public class ContactsProvider extends Provider<ContactsPojo> {
                 match = pojo.updateMatchingRelevance(matchInfo, match);
             }
 
+            // Try pinyin matching for Chinese characters
+            matchInfo = fuzzyScore.matchPinyin(pojo);
+            match = pojo.updateMatchingRelevance(matchInfo, match);
+
             if (!match && queryNormalized.length() > 2 && pojo.normalizedPhone != null) {
                 // search for the phone number
                 matchInfo = fuzzyScore.match(pojo.normalizedPhone.codePoints);

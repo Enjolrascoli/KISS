@@ -272,7 +272,8 @@ public class FuzzyScoreV1 implements FuzzyScore {
 
         matchInfo.match = patternIdx == patternLength;
         matchInfo.score = score;
-        return matchInfo;
+        // Return a NEW MatchInfo object to avoid reference issues
+        return new MatchInfo(matchInfo.match, matchInfo.score);
     }
 
     /**
@@ -284,34 +285,33 @@ public class FuzzyScoreV1 implements FuzzyScore {
      */
     @Override
     public MatchInfo matchPinyin(Pojo pojo) {
+        MatchInfo bestMatch = MatchInfo.UNMATCHED;
+        
         // Try matching against the original name first
         MatchInfo nameMatch = match(pojo.normalizedName.codePoints);
-        
         if (nameMatch.match) {
-            // If we have a match on the original name, return it
-            return nameMatch;
+            bestMatch = nameMatch;
         }
-        
+
         // Try matching against full pinyin
         String pinyin = pojo.getPinyin();
         if (!pinyin.isEmpty()) {
             MatchInfo pinyinMatch = match(pinyin);
-            if (pinyinMatch.match && pinyinMatch.score > nameMatch.score) {
-                return pinyinMatch;
+            if (pinyinMatch.match && pinyinMatch.score > bestMatch.score) {
+                bestMatch = pinyinMatch;
             }
         }
-        
+
         // Try matching against pinyin short form
         String pinyinShort = pojo.getPinyinShort();
         if (!pinyinShort.isEmpty()) {
             MatchInfo pinyinShortMatch = match(pinyinShort);
-            if (pinyinShortMatch.match && pinyinShortMatch.score > nameMatch.score) {
-                return pinyinShortMatch;
+            if (pinyinShortMatch.match && pinyinShortMatch.score > bestMatch.score) {
+                bestMatch = pinyinShortMatch;
             }
         }
-        
-        // Return the best match (or unmatched if nothing matched)
-        return nameMatch;
+
+        return bestMatch;
     }
 
 }
