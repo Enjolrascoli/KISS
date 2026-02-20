@@ -1,5 +1,6 @@
 package fr.neamar.kiss.normalizer;
 
+import android.os.Build;
 import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
@@ -45,6 +46,9 @@ public class StringNormalizer {
         IntSequenceBuilder codePoints = new IntSequenceBuilder(numCodePoints);
         IntSequenceBuilder resultMap = new IntSequenceBuilder(numCodePoints);
         CharBuffer buffer = CharBuffer.allocate(2);
+        
+        CjkRomanizer.init(input.toString());
+        
         int i = 0;
         for (int iterCodePoint = 0; iterCodePoint < numCodePoints; iterCodePoint += 1) {
             int codepoint = Character.codePointAt(input, i);
@@ -63,6 +67,18 @@ public class StringNormalizer {
                 }
             }
             else {
+                // Append romanization for CJK characters before normalization
+                if (CjkRomanizer.isCjk(codepoint)) {
+                    String roma = CjkRomanizer.convert(codepoint);
+                    for (int ri = 0; ri < roma.length(); ri++) {
+                        char rc = roma.charAt(ri);
+                        if (Character.isLetter(rc)) {
+                            codePoints.add(makeLowercase ? Character.toLowerCase(rc) : rc);
+                            resultMap.add(i);
+                        }
+                    }
+                }
+                
                 // Otherwise, we'll need to normalize the code point to a letter and potential accentuation
                 buffer.put(Character.toChars(codepoint));
                 buffer.flip();
@@ -188,6 +204,53 @@ public class StringNormalizer {
             for (int codePoint : codePoints)
                 sb.appendCodePoint(codePoint);
             return sb.toString();
+        }
+    }
+
+    private static final class CjkRomanizer {
+        private static android.icu.text.Transliterator transliterator;
+        private static boolean initialized;
+
+        static void init(String input) {
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N || initialized) {
+                return;
+            }
+            String id = "Han-Latin";
+            for (int i = 0; i < input.length(); i++) {
+                char c = input.charAt(i);
+                if ((c >= 0x3040 && c <= 0x309F) || (c >= 0x30A0 && c <= 0x30FF)) {
+                    id = "Any-Latin";
+                    break;
+                }
+                if (c >= 0xAC00 && c <= 0xD7AF) {
+                    id = "Hangul-Latin";
+                    break;
+                }
+            }
+            try {
+                transliterator = android.icu.text.Transliterator.getInstance(id);
+            } catch (Exception e) {
+                transliterator = null;
+            }
+            initialized = true;
+        }
+
+        static boolean isCjk(int codepoint) {
+            return (codepoint >= 0x4E00 && codepoint <= 0x9FFF)
+                    || (codepoint >= 0x3400 && codepoint <= 0x4DBF)
+                    || (codepoint >= 0xF900 && codepoint <= 0xFAFF)
+                    || (codepoint >= 0x3040 && codepoint <= 0x30FF)
+                    || (codepoint >= 0xAC00 && codepoint <= 0xD7AF);
+        }
+
+        static String convert(int codepoint) {
+            if (transliterator == null) {
+                return "";
+            }
+            String result = transliterator.transliterate(new String(Character.toChars(codepoint)));
+            String clean = Normalizer.normalize(result, Normalizer.Form.NFD)
+                    .replaceAll("\\p{InCombiningDiacriticalMarks}", "");
+            return clean.toUpperCase();
         }
     }
 }
