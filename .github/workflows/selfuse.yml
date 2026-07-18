@@ -1,0 +1,87 @@
+name: Sync upstream and build self-use APK
+
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: selfuse-upstream-sync
+  cancel-in-progress: false
+
+jobs:
+  sync-and-build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out fork
+        uses: actions/checkout@v6
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Merge latest upstream
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git remote add upstream https://github.com/Neamar/KISS.git
+          git fetch upstream master
+          git merge --no-edit upstream/master
+
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Restore Gradle cache
+        uses: gradle/actions/setup-gradle@v5
+
+      - name: Prepare optional release signing
+        id: signing
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KISS_KEYSTORE_BASE64 }}
+          STORE_PASSWORD: ${{ secrets.KISS_STORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KISS_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KISS_KEY_PASSWORD }}
+        run: |
+          if [[ -n "$KEYSTORE_BASE64" && -n "$STORE_PASSWORD" && -n "$KEY_ALIAS" && -n "$KEY_PASSWORD" ]]; then
+            echo "$KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/kiss-selfuse.jks"
+            echo "KISS_SIGNING_STORE_FILE=$RUNNER_TEMP/kiss-selfuse.jks" >> "$GITHUB_ENV"
+            echo "KISS_SIGNING_STORE_PASSWORD=$STORE_PASSWORD" >> "$GITHUB_ENV"
+            echo "KISS_SIGNING_KEY_ALIAS=$KEY_ALIAS" >> "$GITHUB_ENV"
+            echo "KISS_SIGNING_KEY_PASSWORD=$KEY_PASSWORD" >> "$GITHUB_ENV"
+            echo "signed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "signed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Unit tests
+        run: ./gradlew testDebugUnitTest --stacktrace
+
+      - name: Build APKs
+        run: ./gradlew assembleDebug assembleRelease --stacktrace
+
+      - name: Select installable APK
+        env:
+          SIGNED: ${{ steps.signing.outputs.signed }}
+        run: |
+          mkdir -p artifacts
+          if [[ "$SIGNED" == "true" ]]; then
+            cp app/build/outputs/apk/release/app-release.apk artifacts/KISS-selfuse.apk
+          else
+            cp app/build/outputs/apk/debug/app-debug.apk artifacts/KISS-selfuse-debug.apk
+          fi
+
+      - name: Push merged upstream changes
+        run: git push origin HEAD:master
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v7
+        with:
+          name: KISS-selfuse-${{ github.run_number }}
+          path: artifacts/*.apk
+          archive: false
+          retention-days: 30

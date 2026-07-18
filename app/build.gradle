@@ -3,6 +3,12 @@ plugins {
     id 'net.ltgt.errorprone'
 }
 
+def selfUseStoreFile = System.getenv('KISS_SIGNING_STORE_FILE')
+def selfUseStorePassword = System.getenv('KISS_SIGNING_STORE_PASSWORD')
+def selfUseKeyAlias = System.getenv('KISS_SIGNING_KEY_ALIAS')
+def selfUseKeyPassword = System.getenv('KISS_SIGNING_KEY_PASSWORD')
+def hasSelfUseSigning = selfUseStoreFile && selfUseStorePassword && selfUseKeyAlias && selfUseKeyPassword
+
 android {
     buildFeatures {
         buildConfig = true
@@ -13,7 +19,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'fr.neamar.kiss'
+        applicationId 'fr.neamar.mykiss'
         minSdk {
             version = release(21)
         }
@@ -26,11 +32,25 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        if (hasSelfUseSigning) {
+            selfUse {
+                storeFile file(selfUseStoreFile)
+                storePassword selfUseStorePassword
+                keyAlias selfUseKeyAlias
+                keyPassword selfUseKeyPassword
+            }
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
             shrinkResources = true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            if (hasSelfUseSigning) {
+                signingConfig signingConfigs.selfUse
+            }
         }
         debug {
             minifyEnabled true

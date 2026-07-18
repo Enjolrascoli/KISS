@@ -1,12 +1,19 @@
 package fr.neamar.kiss.pojo;
 
 import android.content.ComponentName;
+import android.icu.text.Transliterator;
+import android.os.Build;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 
+import fr.neamar.kiss.normalizer.StringNormalizer;
 import fr.neamar.kiss.utils.UserHandle;
 
 public final class AppPojo extends PojoWithTags {
+
+    /** Romanized alias generated once when the app name is loaded. */
+    public StringNormalizer.Result normalizedRomanizedName = null;
 
     public static String getComponentName(String packageName, String activityName,
                                           UserHandle userHandle) {
@@ -43,6 +50,45 @@ public final class AppPojo extends PojoWithTags {
 
     public String getComponentName() {
         return getComponentName(packageName, activityName, userHandle);
+    }
+
+    @Override
+    public void setName(String name) {
+        super.setName(name);
+        normalizedRomanizedName = null;
+
+        if (name != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q && containsNonAscii(name)) {
+            StringNormalizer.Result romanizedName = Romanizer.normalize(name);
+            if (!romanizedName.equals(normalizedName)) {
+                normalizedRomanizedName = romanizedName;
+            }
+        }
+    }
+
+    private static boolean containsNonAscii(String name) {
+        for (int i = 0; i < name.length(); i += 1) {
+            if (name.charAt(i) > 0x7f) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @RequiresApi(Build.VERSION_CODES.Q)
+    private static final class Romanizer {
+        private static final Transliterator TRANSLITERATOR =
+                Transliterator.getInstance("Any-Latin; Latin-ASCII");
+
+        private Romanizer() {
+        }
+
+        private static StringNormalizer.Result normalize(String name) {
+            final String romanized;
+            synchronized (TRANSLITERATOR) {
+                romanized = TRANSLITERATOR.transliterate(name);
+            }
+            return StringNormalizer.normalizeWithResult(romanized, false);
+        }
     }
 
     public boolean isExcluded() {
