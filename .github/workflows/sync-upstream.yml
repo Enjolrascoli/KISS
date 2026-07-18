@@ -1,43 +1,44 @@
-name: App testing
+name: Sync upstream and build signed APK
 
 on:
-  push:
-    branches:
-      - '**'
-  pull_request:
-    branches:
-      - master
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref || github.sha }}
-  cancel-in-progress: ${{ !contains(github.ref, 'master') }}
+  group: upstream-sync
+  cancel-in-progress: false
 
 jobs:
-  test:
-    name: Run Unit Tests
+  sync-and-build:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v6
-      - name: set up Java
+      - name: Check out fork
+        uses: actions/checkout@v6
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Merge latest upstream
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git remote add upstream https://github.com/Neamar/KISS.git
+          git fetch upstream master
+          git merge --no-edit upstream/master
+
+      - name: Set up Java
         uses: actions/setup-java@v5
         with:
-          distribution: 'temurin'
+          distribution: temurin
           java-version: 21
-      - name: Lint code
-        run: bash ./gradlew lint --stacktrace
-      - name: Unit tests
-        run: bash ./gradlew testDebugUnitTest --stacktrace
-  apk:
-    name: Generate signed release APK
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v6
-      - name: set up Java
-        uses: actions/setup-java@v5
-        with:
-          distribution: 'temurin'
-          java-version: 21
+
+      - name: Restore Gradle cache
+        uses: gradle/actions/setup-gradle@v5
+
       - name: Prepare release signing
         env:
           KEYSTORE_BASE64: ${{ secrets.KISS_RELEASE_KEYSTORE_BASE64 }}
@@ -54,11 +55,22 @@ jobs:
           echo "KISS_RELEASE_STORE_PASSWORD=$STORE_PASSWORD" >> "$GITHUB_ENV"
           echo "KISS_RELEASE_KEY_ALIAS=$KEY_ALIAS" >> "$GITHUB_ENV"
           echo "KISS_RELEASE_KEY_PASSWORD=$KEY_PASSWORD" >> "$GITHUB_ENV"
-      - name: Build release APK
-        run: bash ./gradlew assembleRelease --stacktrace
+
+      - name: Test and build release APK
+        run: ./gradlew lint testDebugUnitTest assembleRelease --stacktrace
+
+      - name: Stage artifact
+        run: |
+          mkdir -p artifacts
+          cp app/build/outputs/apk/release/app-release.apk artifacts/KISS-release.apk
+
+      - name: Push merged upstream changes
+        run: git push origin HEAD:master
+
       - name: Upload release APK
         uses: actions/upload-artifact@v7
         with:
           name: KISS-release-${{ github.run_number }}
-          path: app/build/outputs/apk/release/app-release.apk
+          path: artifacts/KISS-release.apk
           archive: false
+          retention-days: 30

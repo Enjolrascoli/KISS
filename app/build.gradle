@@ -3,11 +3,11 @@ plugins {
     id 'net.ltgt.errorprone'
 }
 
-def selfUseStoreFile = System.getenv('KISS_SIGNING_STORE_FILE')
-def selfUseStorePassword = System.getenv('KISS_SIGNING_STORE_PASSWORD')
-def selfUseKeyAlias = System.getenv('KISS_SIGNING_KEY_ALIAS')
-def selfUseKeyPassword = System.getenv('KISS_SIGNING_KEY_PASSWORD')
-def hasSelfUseSigning = selfUseStoreFile && selfUseStorePassword && selfUseKeyAlias && selfUseKeyPassword
+def releaseStoreFile = System.getenv('KISS_RELEASE_STORE_FILE')
+def releaseStorePassword = System.getenv('KISS_RELEASE_STORE_PASSWORD')
+def releaseKeyAlias = System.getenv('KISS_RELEASE_KEY_ALIAS')
+def releaseKeyPassword = System.getenv('KISS_RELEASE_KEY_PASSWORD')
+def hasReleaseSigning = releaseStoreFile && releaseStorePassword && releaseKeyAlias && releaseKeyPassword
 
 android {
     buildFeatures {
@@ -33,12 +33,12 @@ android {
     }
 
     signingConfigs {
-        if (hasSelfUseSigning) {
-            selfUse {
-                storeFile file(selfUseStoreFile)
-                storePassword selfUseStorePassword
-                keyAlias selfUseKeyAlias
-                keyPassword selfUseKeyPassword
+        if (hasReleaseSigning) {
+            release {
+                storeFile file(releaseStoreFile)
+                storePassword releaseStorePassword
+                keyAlias releaseKeyAlias
+                keyPassword releaseKeyPassword
             }
         }
     }
@@ -48,8 +48,8 @@ android {
             minifyEnabled true
             shrinkResources = true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            if (hasSelfUseSigning) {
-                signingConfig signingConfigs.selfUse
+            if (hasReleaseSigning) {
+                signingConfig signingConfigs.release
             }
         }
         debug {

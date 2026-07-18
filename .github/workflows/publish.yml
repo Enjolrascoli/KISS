@@ -26,19 +26,41 @@ jobs:
       - name: Checkout Source
         uses: actions/checkout@v6
 
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21
+
       - name: Create Release Directory
         run: mkdir -p release
+
+      - name: Prepare release signing
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KISS_RELEASE_KEYSTORE_BASE64 }}
+          STORE_PASSWORD: ${{ secrets.KISS_RELEASE_STORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KISS_RELEASE_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KISS_RELEASE_KEY_PASSWORD }}
+        run: |
+          : "${KEYSTORE_BASE64:?Missing KISS_RELEASE_KEYSTORE_BASE64}"
+          : "${STORE_PASSWORD:?Missing KISS_RELEASE_STORE_PASSWORD}"
+          : "${KEY_ALIAS:?Missing KISS_RELEASE_KEY_ALIAS}"
+          : "${KEY_PASSWORD:?Missing KISS_RELEASE_KEY_PASSWORD}"
+          printf '%s' "$KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/kiss-release.jks"
+          echo "KISS_RELEASE_STORE_FILE=$RUNNER_TEMP/kiss-release.jks" >> "$GITHUB_ENV"
+          echo "KISS_RELEASE_STORE_PASSWORD=$STORE_PASSWORD" >> "$GITHUB_ENV"
+          echo "KISS_RELEASE_KEY_ALIAS=$KEY_ALIAS" >> "$GITHUB_ENV"
+          echo "KISS_RELEASE_KEY_PASSWORD=$KEY_PASSWORD" >> "$GITHUB_ENV"
 
       - name: Validate
         run: |
           bash ./gradlew lint --stacktrace
           bash ./gradlew testDebugUnitTest --stacktrace
 
-      - name: Build APKs
+      - name: Build release APK
         run: |
-          bash ./gradlew assembleDebug assembleRelease --stacktrace
-          cp "app/build/outputs/apk/debug/app-debug.apk" "release/"
-          cp "app/build/outputs/apk/release/app-release-unsigned.apk" "release/"
+          bash ./gradlew assembleRelease --stacktrace
+          cp "app/build/outputs/apk/release/app-release.apk" "release/KISS-release.apk"
 
       - name: Upload Files
         run: >
