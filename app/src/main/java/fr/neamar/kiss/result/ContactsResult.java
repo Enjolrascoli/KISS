@@ -163,7 +163,7 @@ public class ContactsResult extends CallResult<ContactsPojo> {
                     }
                     if (appDrawable == null) {
                         // This should never happen, let's just return the generic activity icon
-                        appDrawable = context.getPackageManager().getDefaultActivityIcon();
+                        appDrawable = PackageManagerUtils.getDefaultActivityIcon(context);
                     }
                 }
             }

@@ -608,17 +608,20 @@ public class IconsHandler {
         return null;
     }
 
-    public Drawable getThemedDrawable(@NonNull Pojo pojo, @DrawableRes int resId, @ColorInt int backgroundColor, @ColorInt int textColor, @ColorInt int themeFillColor) {
+    @NonNull
+    public Drawable getThemedDrawable(@NonNull Pojo pojo, @DrawableRes int resId, @ColorInt int backgroundColor, @ColorInt int textColor, @ColorInt int themeFillColor, boolean makeThemedIcon) {
         Drawable icon = getCustomIcon(pojo);
         if (icon != null) {
             return icon;
         }
 
         icon = ResourcesCompat.getDrawable(ctx.getResources(), resId, ctx.getTheme());
-        if (DrawableUtils.isAdaptiveIconDrawable(icon)) {
+        if (icon == null) {
+            return PackageManagerUtils.getDefaultActivityIcon(ctx);
+        } else if (DrawableUtils.isAdaptiveIconDrawable(icon)) {
             return icon;
-        } else if (DrawableUtils.hasThemedIcons() &&
-                DrawableUtils.isThemedIconEnabled(ctx)) {
+        } else if (makeThemedIcon ||
+                (DrawableUtils.hasThemedIcons() && DrawableUtils.isThemedIconEnabled(ctx))) {
             Drawable background = getBackgroundDrawable(backgroundColor);
             int insetX = (int) (background.getIntrinsicWidth() * 0.15);
             int insetY = (int) (background.getIntrinsicHeight() * 0.15);

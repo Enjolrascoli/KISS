@@ -214,6 +214,8 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
                 updateNightMode();
             } else if ("night-mode".equals(key)) {
                 InterfaceTweaks.setDefaultNightMode(KissApplication.getApplication(requireContext()));
+            } else if ("enable-settings".equals(key)) {
+                getDataHandler().reloadSettingsProvider();
             }
         }
     }

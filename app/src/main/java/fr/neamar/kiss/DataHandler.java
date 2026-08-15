@@ -831,6 +831,19 @@ public class DataHandler implements SharedPreferences.OnSharedPreferenceChangeLi
         }
     }
 
+    @Nullable
+    public SettingsProvider getSettingsProvider() {
+        ProviderEntry entry = this.providers.get("settings");
+        return (entry != null) ? ((SettingsProvider) entry.provider) : null;
+    }
+
+    public void reloadSettingsProvider() {
+        SettingsProvider settingsProvider = getSettingsProvider();
+        if (settingsProvider != null) {
+            settingsProvider.reload();
+        }
+    }
+    
     /**
      * @return list with favorite ids
      */
@@ -945,6 +958,15 @@ public class DataHandler implements SharedPreferences.OnSharedPreferenceChangeLi
 
     public void resetFavorites() {
         setFavoriteIds(Collections.emptyList());
+    }
+
+    /**
+     * @param id favorite id
+     * @return true, if id is from favorite
+     */
+    public boolean hasFavorite(String id) {
+        List<String> favoriteIds = getFavoriteIds();
+        return favoriteIds.contains(id);
     }
 
     /**

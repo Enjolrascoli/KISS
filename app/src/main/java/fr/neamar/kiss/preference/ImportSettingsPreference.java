@@ -126,6 +126,7 @@ public class ImportSettingsPreference {
                 dataHandler.reloadApps();
                 dataHandler.reloadShortcuts();
                 dataHandler.reloadSearchProvider();
+                dataHandler.reloadSettingsProvider();
                 dataHandler.reloadContactsProvider();
 
                 Toast.makeText(context, R.string.import_settings_done, Toast.LENGTH_SHORT).show();
