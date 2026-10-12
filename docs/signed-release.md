@@ -5,6 +5,13 @@ The `Sync upstream and build signed APK` workflow runs daily, merges
 `KISS-release.apk`. It can also be started manually from the repository's
 **Actions** tab.
 
+Upstream changes can include GitHub Actions workflow files. The default
+`GITHUB_TOKEN` cannot push those changes, so the checkout uses the repository
+deploy key stored in the `UPSTREAM_SYNC_SSH_KEY` Actions secret. Its public key
+must be registered under **Settings → Deploy keys** with write access enabled.
+This key only grants access to this fork. APK artifacts are uploaded before
+pushing, so a push failure does not prevent downloading a successful build.
+
 Release signing is mandatory. Add these repository Actions secrets under
 **Settings → Secrets and variables → Actions**:
 
