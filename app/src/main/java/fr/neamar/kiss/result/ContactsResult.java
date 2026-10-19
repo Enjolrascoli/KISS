@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.view.View;
@@ -19,9 +20,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.preference.PreferenceManager;
 
-import java.io.IOException;
-import java.io.InputStream;
-
 import fr.neamar.kiss.IconsHandler;
 import fr.neamar.kiss.KissApplication;
 import fr.neamar.kiss.R;
@@ -31,9 +29,7 @@ import fr.neamar.kiss.pojo.ContactsPojo;
 import fr.neamar.kiss.searcher.QueryInterface;
 import fr.neamar.kiss.ui.ImprovedQuickContactBadge;
 import fr.neamar.kiss.ui.ListPopup;
-import fr.neamar.kiss.ui.ShapedContactBadge;
 import fr.neamar.kiss.utils.ClipboardUtils;
-import fr.neamar.kiss.utils.Log;
 import fr.neamar.kiss.utils.MimeTypeUtils;
 import fr.neamar.kiss.utils.PackageManagerUtils;
 import fr.neamar.kiss.utils.fuzzy.FuzzyScore;
@@ -207,19 +203,8 @@ public class ContactsResult extends CallResult<ContactsPojo> {
         if (icon == null) {
             synchronized (this) {
                 if (icon == null) {
-                    if (pojo.icon != null) {
-                        try (InputStream inputStream = context.getContentResolver()
-                                .openInputStream(pojo.icon)) {
-                            icon = Drawable.createFromStream(inputStream, null);
-                        } catch (IOException e) {
-                            Log.d(TAG, "Unable to load contact icon", e);
-                        }
-                    }
-
-                    // Default icon
-                    if (icon == null) {
-                        icon = getThemedDrawable(context, pojo, R.drawable.ic_contact);
-                    }
+                    IconsHandler iconsHandler = KissApplication.getApplication(context).getIconsHandler();
+                    icon = iconsHandler.getDrawableForContact(pojo, pojo.icon, getBackgroundColor(context), getTextColor(context), getThemeFillColor(context));
                 }
             }
         }
@@ -229,26 +214,29 @@ public class ContactsResult extends CallResult<ContactsPojo> {
     @Override
     public void inflateFavorite(@NonNull Context context, @NonNull View favoriteView) {
         Drawable drawable = getDrawable(context);
-        if (drawable != null) {
-            drawable = ShapedContactBadge.getShapedDrawable(context, drawable);
-        }
         ImageView favoriteImage = favoriteView.findViewById(R.id.favorite);
         favoriteImage.setImageDrawable(drawable);
         favoriteView.setContentDescription(pojo.getName());
     }
 
     private void launchContactView(Context context, View v) {
-        Intent viewContact = new Intent(Intent.ACTION_VIEW);
+        Uri contactUri = ContactsContract.Contacts.getLookupUri(pojo.getContactId(), pojo.lookupKey);
 
-        Uri contactUri = ContactsContract.Contacts.CONTENT_LOOKUP_URI;
-        contactUri = Uri.withAppendedPath(contactUri, String.valueOf(pojo.lookupKey));
-        contactUri = Uri.withAppendedPath(contactUri, String.valueOf(pojo.getContactId()));
-
-        viewContact.setData(contactUri);
-        setSourceBounds(viewContact, v);
-        viewContact.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        viewContact.addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
-        context.startActivity(viewContact);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && pojo.getContactData() != null) {
+            ContactsContract.QuickContact.showQuickContact(
+                    context,
+                    getViewBounds(v),
+                    contactUri,
+                    null,
+                    pojo.getContactData().getMimeType());
+        } else {
+            ContactsContract.QuickContact.showQuickContact(
+                    context,
+                    getViewBounds(v),
+                    contactUri,
+                    ContactsContract.QuickContact.MODE_LARGE,
+                    null);
+        }
     }
 
     @Override
