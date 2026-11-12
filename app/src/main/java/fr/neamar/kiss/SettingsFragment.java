@@ -3,6 +3,7 @@ package fr.neamar.kiss;
 import static fr.neamar.kiss.dataprovider.ProviderName.*;
 
 import android.app.role.RoleManager;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -98,6 +99,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
         updateItemsToRun();
         fixSummaries();
         updateNightMode();
+        setupDefaultLauncher();
 
         permissionManager = new Permission(getActivity());
     }
@@ -199,10 +201,11 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
                 if (enabled && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
                     startActivity(new Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS));
                 }
-            } else if ("selected-contact-mime-types".equals(key)) {
+            } else if (key.startsWith("contact-action-")) {
                 getDataHandler().reload(CONTACTS);
             } else if ("theme".equals(key)) {
                 updateNightMode();
+                InterfaceTweaks.setDefaultNightMode(KissApplication.getApplication(requireContext()));
             } else if ("night-mode".equals(key)) {
                 InterfaceTweaks.setDefaultNightMode(KissApplication.getApplication(requireContext()));
             } else if ("enable-settings".equals(key)) {
@@ -271,6 +274,21 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
         }
     }
 
+    private void setupDefaultLauncher() {
+        Preference defaultLauncher = findPreference("default-launcher");
+        if (defaultLauncher != null) {
+            defaultLauncher.setOnPreferenceClickListener(preference -> {
+                try {
+                    startActivity(new Intent(Settings.ACTION_HOME_SETTINGS));
+                } catch (ActivityNotFoundException e) {
+                    // some devices don't expose the home app picker directly
+                    startActivity(new Intent(Settings.ACTION_SETTINGS));
+                }
+                return true;
+            });
+        }
+    }
+
     private void updateNightMode() {
         boolean isAmoledTheme = "amoled-dark".equals(prefs.getString("theme", "transparent"));
 
@@ -278,11 +296,6 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
         if (darkMode != null) {
             darkMode.setEnabled(!isAmoledTheme);
             darkMode.setVisible(!isAmoledTheme);
-        }
-
-        if (isAmoledTheme) {
-            PreferenceManager.getDefaultSharedPreferences(requireContext()).edit()
-                    .putString("night-mode", "yes").apply();
         }
     }
 
@@ -393,9 +406,6 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
                 if (positiveResult && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
                     startActivity(new Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS));
                 }
-                break;
-            case "default-launcher":
-                new DefaultLauncherPreference().onDialogClosed(getContext(), positiveResult);
                 break;
             case "export-settings":
                 new ExportSettingsPreference().onDialogClosed(getContext(), positiveResult);

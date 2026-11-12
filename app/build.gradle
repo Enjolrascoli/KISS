@@ -1,13 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'net.ltgt.errorprone'
+    id 'com.github.triplet.play'
 }
-
-def releaseStoreFile = System.getenv('KISS_RELEASE_STORE_FILE')
-def releaseStorePassword = System.getenv('KISS_RELEASE_STORE_PASSWORD')
-def releaseKeyAlias = System.getenv('KISS_RELEASE_KEY_ALIAS')
-def releaseKeyPassword = System.getenv('KISS_RELEASE_KEY_PASSWORD')
-def hasReleaseSigning = releaseStoreFile && releaseStorePassword && releaseKeyAlias && releaseKeyPassword
 
 android {
     buildFeatures {
@@ -26,31 +21,29 @@ android {
         targetSdk {
             version = release(36)
         }
-        versionCode 224
-        versionName "3.26.0"
+        versionCode 225
+        versionName "3.27.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
-        if (hasReleaseSigning) {
-            release {
-                storeFile file(releaseStoreFile)
-                storePassword releaseStorePassword
-                keyAlias releaseKeyAlias
-                keyPassword releaseKeyPassword
-            }
+        release {
+            storeFile System.getenv('KISS_RELEASE_STORE_FILE') ? file(System.getenv('KISS_RELEASE_STORE_FILE')) : null
+            storePassword System.getenv('KISS_RELEASE_STORE_PASSWORD')
+            keyAlias System.getenv('KISS_RELEASE_KEY_ALIAS')
+            keyPassword System.getenv('KISS_RELEASE_KEY_PASSWORD')
         }
     }
 
     buildTypes {
         release {
+            if (System.getenv('KISS_RELEASE_STORE_FILE')) {
+                signingConfig signingConfigs.release
+            }
             minifyEnabled true
             shrinkResources = true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            if (hasReleaseSigning) {
-                signingConfig signingConfigs.release
-            }
         }
         debug {
             minifyEnabled true

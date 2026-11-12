@@ -139,9 +139,6 @@
     <string name="restart_name">Uudelleenkäynnistä KISS</string>
     <string name="restart_warn">Tahdotko varmasti uudelleenkäynnistää KISS-käynnistimen\? Jos KISS ei ole oletuskäynnistimesi, se sulkeutuu.</string>
     <string name="default_launcher_title">Vaihda oletuskäynnistintä</string>
-    <string name="default_launcher_warn">Oletuskäynnistimen valitsemisen jälkeen sinut lähetetään sen kotiruutuun. Haluatko varmasti jatkaa\?
-\n
-\nHuomaa: Jos et näe \"Aina\" vaihtoehtoa, paina \"Koti\"-painiketta haluamasi käynnistimen valitsemisen jälkeen.</string>
     <string name="items_title" tools:ignore="PluralsCandidate">%d kohdetta</string>
     <string name="alternate_history_inputs">Vaihtoehtoiset historialähteet</string>
     <string name="keyboard_options">Näppäimistö-asetukset</string>
@@ -166,7 +163,7 @@
     <string name="menu_widget_add">Lisää pienoissovellus</string>
     <string name="menu_widget_remove">Poista pienoissovellus</string>
     <string name="rate_the_app">Arvostele sovellus</string>
-    <string name="history_settings_summary">Resetoi historiasi, poissulje sovelluksia…</string>
+    <string name="history_settings_summary">Resetoi historiasi, jäädytä se…</string>
     <string name="user_interface_summary">Teemat, läpinäkyvyys ja värit</string>
     <string name="providers_summary">Määritä hakutuloksia, lisää omia hakukoneitasi, …</string>
     <string name="title_ux">Käyttökokemus</string>

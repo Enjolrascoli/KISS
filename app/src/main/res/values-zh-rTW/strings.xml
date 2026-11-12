@@ -126,7 +126,6 @@
     <string name="restart_name">重啟 KISS</string>
     <string name="restart_warn">您確定要重新啟動 KISS？如果 KISS 不是您的預設主畫面，本程式只會關閉並退出。</string>
     <string name="default_launcher_title">更改預設主畫面應用程式</string>
-    <string name="default_launcher_warn">更改預設主畫面應用程式後，您將會開啟該主畫面程式。確定要繼續？\n\n提醒：如果您沒有看到“一律採用”選項，您需要再次按下“HOME”鍵。</string>
     <string name="items_title">%d 項</string>
     <string name="alternate_history_inputs">備用歷史紀錄輸入</string>
     <string name="keyboard_options">鍵盤選項</string>
@@ -153,7 +152,7 @@
     <string name="menu_widget_add">添加主畫面小工具</string>
     <string name="menu_widget_remove">移除小工具</string>
     <string name="rate_the_app">給 KISS 評分</string>
-    <string name="history_settings_summary">重設您的歷史紀錄、隱藏應用程式…</string>
+    <string name="history_settings_summary">重設或停用您的歷史紀錄…</string>
     <string name="user_interface_summary">主題、透明度和顏色</string>
     <string name="providers_summary">調整搜尋結果，新增自訂搜尋引擎…</string>
     <string name="title_ux">使用者體驗</string>

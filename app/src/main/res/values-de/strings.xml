@@ -112,7 +112,6 @@
     <string name="toast_favorites_removed">„%s“ aus den Favoriten entfernt</string>
     <string name="menu_favorites_remove">Aus Favoritenleiste entfernen</string>
     <string name="default_launcher_title">Standard-Launcher ändern</string>
-    <string name="default_launcher_warn">Nach der Auswahl des Standard-Launchers, wirst du auf dessen Startbildschirm weitergeleitet. Bist du sicher, dass du fortfahren möchtest? \n \nHinweis: Falls die Option „Immer“ nicht angezeigt wird, bitte nach der Auswahl des gewünschten Launchers die Starttaste drücken.</string>
     <string name="share">Teilen mit …</string>
     <string name="tags_visible">Stichworte zeigen</string>
     <string name="notification_bar_color">Farbe der Benachrichtigungsleiste</string>
@@ -153,7 +152,7 @@
     <string name="pref_hide_statusbar">Statusleiste ausblenden</string>
     <string name="pref_hide_statusbar_desc">Benachrichtigungsleiste ausblenden und den „Immersive-Mode“ einschalten</string>
     <string name="rate_the_app">App bewerten</string>
-    <string name="history_settings_summary">Verlauf zurücksetzen, Applikationen ausschließen,…</string>
+    <string name="history_settings_summary">Verlauf zurücksetzen, einfrieren, …</string>
     <string name="user_interface_summary">Thema, Transparenz und Farben</string>
     <string name="providers_summary">Sucheinstellungen verändern, Web-Suchanbieter hinzufügen, …</string>
     <string name="title_ux">Benutzererlebnis</string>
@@ -300,8 +299,6 @@
     <string name="ui_item_open">„%1$s“ öffnen</string>
     <string name="excluded_apps_toggle">Ausgeschlossene Apps in der Suche anzeigen</string>
     <string name="gesture_launch_pojo">Starte…</string>
-    <string name="contact_mime_types_title">Anzuzeigende Kontakte auswählen</string>
-    <string name="contact_mime_types_summary">Alle Arten von Kontakten, die in den Suchergebnissen angezeigt werden können</string>
     <string name="always_default_web_search_on_enter">Bei einer Eingabe immer den Standard-Websuchanbieter aufrufen</string>
     <string name="results_size">Größe der Ergebnisse</string>
     <string name="reset_excluded_app_shortcuts_warn">Deine Liste der Apps, für die keine Verknüpfungen angezeigt werden sollen, wirklich zurücksetzen?</string>

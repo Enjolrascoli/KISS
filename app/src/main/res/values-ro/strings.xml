@@ -110,9 +110,6 @@
     <string name="toast_favorites_removed">%s eliminat din favorite</string>
     <string name="menu_favorites_remove">Elimină din favorite</string>
     <string name="default_launcher_title">Schimbă lansatorul de aplicații implicit</string>
-    <string name="default_launcher_warn">După selectarea lansatorului implicit, veți ajunge la ecranul lui principal. Sigur doriți să continuați?
-\n
-\nNotă: Dacă nu vedeți opțiunea \"Întotdeauna\", apăsați butonul Acasă după selecția lansatorului dorit.</string>
     <string name="tags_visible">Arată etichete</string>
     <string name="share">Partajează cu…</string>
     <string name="main_color">Culoare primară</string>
@@ -151,7 +148,7 @@
     <string name="pref_hide_navbar_desc">Ascunde bara de navigație și activează modul imersiv</string>
     <string name="pref_hide_statusbar">Ascunde bara de stare</string>
     <string name="pref_hide_statusbar_desc">Ascunde bara de notificări și activează modul imersiv</string>
-    <string name="history_settings_summary">Resetează istoric, aplicații excluse, …</string>
+    <string name="history_settings_summary">Resetează istoric, îngheață istoric, …</string>
     <string name="user_interface_summary">Teme, transparență și culori</string>
     <string name="providers_summary">Setează rezultate căutare, adaugă motoare de căutare personalizate, …</string>
     <string name="title_ux">Interacțiune</string>
@@ -328,8 +325,6 @@
     <string name="tagged_result_sort_mode_desc">Selectați modul de sortare a rezultatelor atunci când sunt afișate după etichetă</string>
     <string name="enable_notification_history">Afișați aplicațiile cu notificări noi în istoric</string>
     <string name="history_time">Accesat în același moment</string>
-    <string name="contact_mime_types_title">Selectați contactele de afișat</string>
-    <string name="contact_mime_types_summary">Toate tipurile de contacte ce pot fi afișate în rezultatele cautării</string>
     <string name="menu_widget_settings">Setări</string>
     <string name="shared_text_empty">Oopa… textul e de fapt gol.</string>
     <string name="results_size_largest">Cel mai mare</string>

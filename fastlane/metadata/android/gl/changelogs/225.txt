@@ -1,0 +1,12 @@
+* inicio máis rápido
+* "Cambiar lanzador" abre o selector do sistema
+* cor da barra de estado en Android 15+
+* arranxo do tema AMOLED e cor negra
+* as contas xa non son teléfono nin URL
+* xa non se ocultan contactos con números duplicados
+* arranxos: axustes en favoritos, orde e prioridade
+* foco co teclado físico (por @dev-r34per)
+* números de contactos do perfil de traballo
+* widgets con scroll de 2 dedos (por @photonsphere-org)
+* gravación de chamadas máis fiable
+* moitas correccións

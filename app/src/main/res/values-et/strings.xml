@@ -226,7 +226,7 @@
     <string name="menu_widget_move_down">Liiguta allapoole</string>
     <string name="pref_tags_menu">Lisa menüüsse silte</string>
     <string name="shortcuts_no_host_permission">KISS enam pole vaikimisi rakenduste käivitaja ja tal puudub ligipääs sinu määratud kiirvaliku nuppudele.</string>
-    <string name="history_settings_summary">Lähtesta ajalugu, välista rakendusi, jne…</string>
+    <string name="history_settings_summary">Lähtesta ajalugu, külmuta see, jne…</string>
     <string name="hide_search_bar_hint">Eemalda otsinguribalt vihje tekst</string>
     <string name="large_search_bar">Suurem otsinguriba</string>
     <string name="color_transparent">Läbipaistev</string>
@@ -296,7 +296,6 @@
     <string name="theme_shadow">Tekstikontuurid (varjud)</string>
     <string name="theme_customize_disabled">Pole kasutusel</string>
     <string name="restart_desc">Taaskäivitamine võib teha korda kujunduse vead ja kontaktide mittekuvamise</string>
-    <string name="default_launcher_warn">Kui vahetad vaikimisi kasutatava käivitaja, siis saadetakse sind tema avalehele. Kas sa oled kindel, et tahad jätkata?\n\nMärkus: Kui sa ei näe valikut „Alati“, siis peale soovitud käivitaja valimist vajuta nuppu „Avaleht“.</string>
     <string name="providers_summary">Kohanda otsingutulemusi, lisa enda valitud otsingumootoreid, …</string>
     <string name="history_favorites_summary">Lähtesta oma lemmikud, eemalda lemmikute riba…</string>
     <string name="title_wallpaper">Toimingud elava taustapildiga</string>
@@ -326,8 +325,6 @@
     <string name="theme_customize_enabled">Kasutusel</string>
     <string name="theme_customisation">Täiendav välimuse kohandamine</string>
     <string name="import_settings_done">Seadistused on imporditud.</string>
-    <string name="contact_mime_types_title">Vali näidatavad kontaktid</string>
-    <string name="contact_mime_types_summary">Eri tüüpi kontaktid, mida soovid kuvada otsingutulemustes</string>
     <string name="menu_widget_settings">Seadistused</string>
     <string name="shared_text_empty">Ups… tekst on tegelikult tühi.</string>
     <string name="results_size_largest">Suurim</string>

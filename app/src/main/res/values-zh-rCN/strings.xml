@@ -110,9 +110,6 @@
     <string name="menu_favorites_remove">移除收藏</string>
     <string name="tags_add_title">添加标签，用空格分隔</string>
     <string name="default_launcher_title">更改默认启动器</string>
-    <string name="default_launcher_warn">在更改默认启动器后，您将被带到主屏幕。确定继续吗？
-
-注意：如果您没有看到“始终”选项，请在选完所需的启动器后按下“主屏幕”按钮。</string>
     <string name="tags_visible">显示标签</string>
     <string name="share">分享到…</string>
     <string name="main_color">主要颜色</string>
@@ -151,7 +148,7 @@
     <string name="pref_hide_navbar_desc">隐藏导航栏并开启沉浸模式</string>
     <string name="pref_hide_statusbar">隐藏状态栏</string>
     <string name="pref_hide_statusbar_desc">隐藏通知栏并开启沉浸模式</string>
-    <string name="history_settings_summary">重置您的历史记录、排除应用等…</string>
+    <string name="history_settings_summary">重置或冻结您的历史记录等…</string>
     <string name="user_interface_summary">主题、透明度和颜色</string>
     <string name="providers_summary">调整搜索结果，添加自定义搜索引擎等…</string>
     <string name="title_ux">用户体验</string>
@@ -328,8 +325,6 @@
     <string name="tagged_result_sort_mode_desc">选择按标签显示时应该如何排列结果</string>
     <string name="enable_notification_history">在历史记录中显示有新通知的应用</string>
     <string name="history_time">在每天同一时间访问</string>
-    <string name="contact_mime_types_summary">可以在搜索结果中展示的所有联系人类型</string>
-    <string name="contact_mime_types_title">选择要显示的联系人</string>
     <string name="menu_widget_settings">设置</string>
     <string name="shared_text_empty">哎呀… 文本实际是空的。</string>
     <string name="results_size_largest">最大</string>

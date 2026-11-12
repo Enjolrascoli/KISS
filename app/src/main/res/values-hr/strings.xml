@@ -227,12 +227,9 @@
     <string name="wp_animate_center_desc">Slika pozadine će se ponovo centrirati nakon klizanja</string>
     <string name="unable_to_initialize_shortcuts">Neuspjelo inicijaliziranje prečaca. Je li KISS standardni pokretač\?</string>
     <string name="color_transparent">Prozirna</string>
-    <string name="default_launcher_warn">Nakon što odabereš standardnog pokretača, otvorit će se njegov početni ekran. Stvarno želiš nastaviti\?
-\n
-\nNapomena: Ako ne vidiš opciju „Uvijek”, pritisni gumb „Početna” nakon što odabereš željenog pokretača.</string>
     <string name="wp_drag_animate_desc">Povuci ← → za pomicanje slike pozadine</string>
     <string name="menu_widget_add">Dodaj widget</string>
-    <string name="history_settings_summary">Resetiraj povijest, izuzmi aplikacije, …</string>
+    <string name="history_settings_summary">Resetiraj povijest, zamrzni je, …</string>
     <string name="search_provider_error_exists">Tražilica s tim imenom već postoji</string>
     <string name="pref_fav_tags_select">Oznake za prikaz u traci favorita</string>
     <string name="settings_sound">Zvuk i glasnoća</string>
@@ -309,8 +306,6 @@
     <string name="menu_shortcut_pin">Prikvači prečac</string>
     <string name="menu_widget_settings">Postavke</string>
     <string name="history_time">Pristupljeno u isto doba dana</string>
-    <string name="contact_mime_types_title">Odaberi kontakte koji će se prikazati</string>
-    <string name="contact_mime_types_summary">Sve vrste kontakata koji se mogu prikazati u rezultatima pretrage</string>
     <string name="export_settings_done">Postavke su izvezene u međuspremnik.</string>
     <string name="export_settings_error">Nije moguće izvesti postavke.</string>
     <string name="import_settings_version_missing">Nije moguće uvesti postavke. Nije otkriven valjani niz verzije.</string>

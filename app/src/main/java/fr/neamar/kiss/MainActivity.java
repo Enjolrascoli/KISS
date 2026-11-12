@@ -174,6 +174,14 @@ public class MainActivity extends AppCompatActivity implements QueryInterface, K
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // During a full backup restore, Android may start the process in restricted mode with a plain Application.
+        // The system kills that process once the restore is over and the launcher is started again normally.
+        if (!(getApplication() instanceof KissApplication)) {
+            Log.w(TAG, "Not running in KissApplication, process is likely in restricted mode (backup/restore)");
+            finish();
+            return;
+        }
+
         /*
          * Initialize preferences
          */
@@ -322,6 +330,11 @@ public class MainActivity extends AppCompatActivity implements QueryInterface, K
 
         // On validate, launch first record
         searchEditText.setOnEditorActionListener((v, actionId, event) -> {
+            // Hardware keyboards send both key down and key up for Enter: only act once
+            if (event != null && event.getAction() != KeyEvent.ACTION_DOWN) {
+                return true;
+            }
+
             if (actionId == android.R.id.closeButton) {
                 if (mPopup != null) {
                     mPopup.dismiss();
@@ -417,6 +430,7 @@ public class MainActivity extends AppCompatActivity implements QueryInterface, K
         }
 
         dismissPopup();
+        permissionManager.askPendingPermissions();
 
         if (KissApplication.getApplication(this).getDataHandler().isAllProvidersLoaded()) {
             displayLoader(false);
@@ -467,6 +481,10 @@ public class MainActivity extends AppCompatActivity implements QueryInterface, K
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (forwarderManager == null) {
+            // onCreate() bailed out early, nothing to clean up
+            return;
+        }
         onBackPressedCallback.remove();
         this.unregisterReceiver(this.mReceiver);
         forwarderManager.onDestroy();
@@ -475,6 +493,10 @@ public class MainActivity extends AppCompatActivity implements QueryInterface, K
     @Override
     protected void onNewIntent(@NonNull Intent intent) {
         super.onNewIntent(intent);
+        if (forwarderManager == null) {
+            // onCreate() bailed out early, activity is finishing
+            return;
+        }
 
         //Set the intent so KISS can tell when it was launched as an assistant
         setIntent(intent);

@@ -109,9 +109,6 @@
     <string name="tags_add_title">Tambahkan tag dipisah dengan spasi</string>
     <string name="tags_confirmation_added">Tag disimpan</string>
     <string name="default_launcher_title">Ubah Peluncur Utama</string>
-    <string name="default_launcher_warn">Setelah memilih Peluncur Default, Anda akan dialihkan ke layar beranda. Apakah Anda yakin ingin melanjutkan\?
-\n
-\nCatatan: Jika Anda tidak melihat opsi \"Selalu\", tekan tombol \"Beranda\" setelah memilih Anda memilih peluncur.</string>
     <string name="toast_favorites_removed">%s telah dihapus dari favorit</string>
     <string name="menu_favorites_remove">Hapus favorit</string>
     <string name="tags_visible">Tampilkan tag</string>
@@ -160,7 +157,7 @@
     <string name="pref_hide_navbar_desc">Sembunyikan bilah navigasi dan aktifkan mode imersif</string>
     <string name="pref_hide_statusbar">Sembunyikan bilah status</string>
     <string name="pref_hide_statusbar_desc">Sembunyikan bilah nofitikasi dan aktifkan mode imersif</string>
-    <string name="history_settings_summary">Atur ulang riwayat Anda, kecualikan aplikasi, …</string>
+    <string name="history_settings_summary">Atur ulang riwayat Anda, bekukan, …</string>
     <string name="user_interface_summary">Tema, transparansi, dan warna</string>
     <string name="providers_summary">Sesuaikan hasil pencarian, tambahkan mesin pencarian khusus, …</string>
     <string name="title_ux">Pengalaman pengguna</string>
@@ -329,8 +326,6 @@
     <string name="import_settings_version_missing">Tidak bisa mengimpor pengaturan. Versi tidak ditemukan.</string>
     <string name="enable_notification_history">Tampilkan apl dengan notifikasi baru dalam riwayat</string>
     <string name="history_time">Diakses pada hari dan waktu yang sama</string>
-    <string name="contact_mime_types_title">Pilih kontak yang ingin ditampilkan</string>
-    <string name="contact_mime_types_summary">Semua tipe kontak yang bisa ditampilkan di dalam hasil pencarian</string>
     <string name="menu_widget_settings">Pengaturan</string>
     <string name="results_size_largest">Terbesar</string>
     <string name="results_size_large">Besar</string>

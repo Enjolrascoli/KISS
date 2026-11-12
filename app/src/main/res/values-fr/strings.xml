@@ -110,9 +110,6 @@
     <string name="menu_tags_edit">Ajouter ou modifier les étiquettes</string>
     <string name="tags_confirmation_added">Étiquette ajoutée</string>
     <string name="default_launcher_title">Changer l\'écran d\'accueil par défaut</string>
-    <string name="default_launcher_warn">Après avoir sélectionné le lanceur par défaut, son écran d\'accueil s\'ouvrira. Voulez-vous continuer ?
-\n
-\nNB : Si le bouton « Toujours » n’apparaît pas, appuyez sur le bouton Accueil après avoir sélectionné le lanceur désiré.</string>
     <string name="toast_favorites_removed">%s a été retiré des favoris</string>
     <string name="menu_favorites_remove">Retirer des favoris</string>
     <string name="share">Partager vers…</string>
@@ -152,7 +149,7 @@
     <string name="pref_hide_navbar_desc">Masquer la barre de navigation et activer le mode immersif</string>
     <string name="pref_hide_statusbar">Masquer la barre d\'état</string>
     <string name="pref_hide_statusbar_desc">Masquer la barre des notifications et activer le mode immersion</string>
-    <string name="history_settings_summary">Purger l\'historique, exclure des applications…</string>
+    <string name="history_settings_summary">Purger l\'historique, le figer…</string>
     <string name="user_interface_summary">Thèmes, transparence et couleurs</string>
     <string name="providers_summary">Ajuster les résultats de recherche, ajouter des moteurs web…</string>
     <string name="title_ux">Expérience utilisateur</string>
@@ -320,8 +317,6 @@
     <string name="tagged_result_sort_mode_name">Mode de tri des résultats par étiquette</string>
     <string name="tags_category">Étiquettes</string>
     <string name="tagged_result_sort_mode_desc">Sélectionner comment les résultats doivent être triés quand affichés par étiquette</string>
-    <string name="contact_mime_types_title">Sélectionner les contacts à afficher</string>
-    <string name="contact_mime_types_summary">Tous les types de contacts qui peuvent apparaître dans les résultats de recherche</string>
     <string name="import_settings_upgrade_kiss">Veuillez mettre à jour KISS avant d\'importer ces paramètres.</string>
     <string name="results_size_default">Par défaut</string>
     <string name="results_size_medium">Moyen</string>

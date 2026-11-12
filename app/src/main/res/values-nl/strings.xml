@@ -110,7 +110,6 @@
     <string name="misc">Overige</string>
     <string name="toast_favorites_removed">%s is verwijderd uit favorieten</string>
     <string name="menu_favorites_remove">Favoriet verwijderen</string>
-    <string name="default_launcher_warn">Na het selecteren van de standaard-launcher, wordt je naar het startscherm gestuurd. Wil je doorgaan?\n\nLet op: als je niet de \"Altijd\"-optie ziet, tik dan de Startknop na het selecteren van de gewenste launcher.</string>
     <string name="tags_visible">Labels tonen</string>
     <string name="share">Delen met…</string>
     <string name="main_color">Primaire kleur</string>
@@ -149,7 +148,7 @@
     <string name="pref_hide_navbar_desc">Navigatiebalk verbergen en de modus volledig scherm inschakelen</string>
     <string name="pref_hide_statusbar">Statusbalk verbergen</string>
     <string name="pref_hide_statusbar_desc">Meldingenbalk verbergen en modus volledig scherm inschakelen</string>
-    <string name="history_settings_summary">Geschiedenis wissen, apps uitsluiten, …</string>
+    <string name="history_settings_summary">Geschiedenis wissen, bevriezen, …</string>
     <string name="user_interface_summary">Thema\'s, transparantheid en kleuren</string>
     <string name="providers_summary">Zoekresultaten aanpassen, zoekmachines toevoegen, …</string>
     <string name="title_ux">Gebruikersbeleving</string>
@@ -326,8 +325,6 @@
     <string name="tagged_result_sort_mode_desc">Sorteervolgorde als getoond per label selecteren</string>
     <string name="contacts_shape_summary">Vorm contactpictogram</string>
     <string name="force_adaptive_summary">Niet-aanpasbare pictogrammen reduceren en op witte achtergrond plaatsen</string>
-    <string name="contact_mime_types_title">Contacten om te tonen selecteren</string>
-    <string name="contact_mime_types_summary">Alle soorten contacten die in de zoekresultaten getoond kunnen worden</string>
     <string name="shared_text_empty">Oeps.. de tekst blijkt leeg.</string>
     <string name="menu_widget_settings">Instellingen</string>
     <string name="results_size_largest">Grootste</string>

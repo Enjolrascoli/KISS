@@ -177,7 +177,6 @@
     <string name="restart_name">Restart KISS</string>
     <string name="restart_warn">Do you really want to restart KISS? If KISS is not your default launcher the app will simply quit.</string>
     <string name="default_launcher_title">Change Default Launcher</string>
-    <string name="default_launcher_warn">After selecting the Default Launcher, you\'ll be sent to its home screen. Are you sure you\'d like to proceed?\n\nNote: If you don\'t see the \"Always\" option, press the \"Home\" button after selecting your desired launcher.</string>
     <string name="items_title" tools:ignore="PluralsCandidate">%d items</string>
     <string name="alternate_history_inputs">Alternate history inputs</string>
     <string name="keyboard_options">Keyboard options</string>
@@ -210,7 +209,7 @@
     <string name="menu_widget_add">Add widget</string>
     <string name="menu_widget_remove">Remove widget</string>
     <string name="rate_the_app">Rate the app</string>
-    <string name="history_settings_summary">Reset your history, exclude apps, …</string>
+    <string name="history_settings_summary">Reset your history, freeze it, …</string>
     <string name="user_interface_summary">Themes, transparency and colors</string>
     <string name="providers_summary">Adjust search results, add custom search engines, …</string>
     <string name="title_ux">User experience</string>
@@ -330,8 +329,14 @@
     <string name="shape_octagon">Octagon</string>
     <string name="shape_hexagon">Hexagon</string>
     <string name="excluded_apps_toggle">Show excluded apps in search</string>
-    <string name="contact_mime_types_title">Select contacts to be shown</string>
-    <string name="contact_mime_types_summary">All types of contacts that can be displayed in the search results</string>
+    <string name="contact_actions">Contact actions</string>
+    <string name="contact_actions_summary">Choose what the buttons next to a contact do, e.g. WhatsApp or Signal</string>
+    <string name="contact_action_left">Left button</string>
+    <string name="contact_action_right">Right button</string>
+    <string name="contact_actions_override_hint">When an app isn\'t available for a contact, SMS or Call is used instead. Long press a button to change it for a single contact.</string>
+    <string name="contact_action_default">Default (%s)</string>
+    <string name="contact_action_none">Nothing</string>
+    <string name="contact_action_sms">SMS</string>
     <string name="always_default_web_search_on_enter">Always trigger default web search provider on enter</string>
     <string name="icons_themed_name">Themed icons</string>
     <string name="icons_themed_summary">Icons are tinted with system colors (beta)</string>

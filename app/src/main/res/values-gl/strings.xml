@@ -269,7 +269,7 @@
     <string name="app_rename_confirmation">Mudou o nome da app a %s</string>
     <string name="tags_visible">Mostrar etiquetas</string>
     <string name="excluded_app_list_erased">Eliminouse a lista de apps excluídas.</string>
-    <string name="history_settings_summary">Restablece o historial, apps excluídas, …</string>
+    <string name="history_settings_summary">Restablece o historial, fíxao, …</string>
     <string name="menu_size_down">Reducir</string>
     <string name="custom_icon_preview">Vista previa</string>
     <string name="history_alphabetically">Alfabético</string>
@@ -305,9 +305,6 @@
     <string name="settings_sound">Son e volume</string>
     <string name="settings_display">Pantalla</string>
     <string name="settings_tethering">Compartir internet</string>
-    <string name="default_launcher_warn">Despois de seleccionar o Lanzador Predeterminado vas ver a súa pantalla de inicio. Tes certeza de querer facelo?
-\n
-\nNota: se non ves a opción «Sempre», preme no botón «Inicio» despois de seleccionar o lanzador desexado.</string>
     <string name="tagged_result_sort_mode_desc">Elixe o xeito en que se ordenan os resultados ao mostralos por etiqueta</string>
     <string name="tags_category">Etiquetas</string>
     <string name="import_settings_error">Non se importaron os axustes.</string>
@@ -328,8 +325,6 @@
     <string name="enable_app">Mostrar no historial as apps recén instaladas</string>
     <string name="keyboard_options">Opcións do teclado</string>
     <string name="import_settings_done">Importáronse os axustes.</string>
-    <string name="contact_mime_types_title">Elixe os contactos a mostrar</string>
-    <string name="contact_mime_types_summary">Pódense mostrar todos os tipos de contactos nos resultados da busca</string>
     <string name="menu_widget_settings">Axustes</string>
     <string name="shared_text_empty">Agarda aí… o texto está baleiro.</string>
     <string name="results_size_largest">O máis grande</string>

@@ -126,9 +126,6 @@
     <string name="restart_name">Riavvia KISS</string>
     <string name="restart_warn">Vuoi riavviare KISS\? Se KISS non è il tuo launcher predefinito verrà solo terminato.</string>
     <string name="default_launcher_title">Cambia launcher predefinito</string>
-    <string name="default_launcher_warn">Dopo aver selezionato il launcher predefinito, verrai portato alla sua schermata iniziale. Vuoi procedere\?
-\n
-\nNota: In assenza dell\'opzione \"Sempre\", premi il tasto \"Home\" una volta selezionato il launcher desiderato.</string>
     <string name="items_title" tools:ignore="PluralsCandidate">%d elementi</string>
     <string name="alternate_history_inputs">Altri elementi della cronologia</string>
     <string name="keyboard_options">Tastiera</string>
@@ -157,7 +154,7 @@
     <string name="menu_widget_add">Aggiungi widget</string>
     <string name="menu_widget_remove">Rimuovi widget</string>
     <string name="rate_the_app">Valuta l\'app</string>
-    <string name="history_settings_summary">Elimina cronologia, escludi applicazioni, …</string>
+    <string name="history_settings_summary">Elimina cronologia, congelala, …</string>
     <string name="user_interface_summary">Temi, trasparenza e colori</string>
     <string name="providers_summary">Modifica risultati, aggiungi motori di ricerca web, …</string>
     <string name="title_ux">Esperienza utente</string>
@@ -333,8 +330,6 @@
     <string name="enable_notification_history">Mostra nella cronologia app con nuove notifiche</string>
     <string name="history_time">Utilizzo alla stessa ora del giorno</string>
     <string name="menu_widget_settings">Impostazioni</string>
-    <string name="contact_mime_types_title">Seleziona contatti da mostrare</string>
-    <string name="contact_mime_types_summary">Tipi di contatto che possono essere visualizzati nei risultati di ricerca</string>
     <string name="shared_text_empty">Ops… il testo è vuoto.</string>
     <string name="results_size_largest">Molto grande</string>
     <string name="results_size_large">Grande</string>
