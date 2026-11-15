@@ -8,10 +8,8 @@
     <string name="ui_item_phone">Chiama “%s”</string>
     <string name="ui_item_contact_hint_message">Messaggio</string>
     <string name="ui_item_contact_hint_call">Chiama</string>
-    <string name="title_ui">Interfaccia utente</string>
     <string name="title_history">Impostazioni cronologia</string>
     <string name="title_providers">Impostazioni ricerca</string>
-    <string name="title_advanced">Avanzate</string>
     <string name="menu_settings">Impostazioni dispositivo…</string>
     <string name="ui_empty_1">Inizia cercando qualsiasi cosa</string>
     <string name="ui_empty_1_sub">Applicazioni, contatti, impostazioni, …</string>
@@ -28,7 +26,6 @@
     <string name="main_kiss">Mostra elenco applicazioni</string>
     <string name="main_kiss_back">Mostra cronologia</string>
     <string name="reset_name">Elimina cronologia</string>
-    <string name="reset_excluded_apps_name">Elimina elenco app escluse da KISS</string>
     <string name="reset_excluded_apps_warn">Vuoi eliminare l\'elenco delle app escluse\?</string>
     <string name="ui_excluded_apps">Modifica app escluse da KISS</string>
     <string name="ui_excluded_apps_dialog_title">Seleziona le app da escludere</string>
@@ -61,7 +58,6 @@
     <string name="search_provider_error_url">Usare un URL valido</string>
     <string name="search_provider_error_exists">Esiste già un motore di ricerca web con questo nome</string>
     <string name="history_mode_name">Modalità cronologia</string>
-    <string name="history_mode_desc">Scegli in quale modo deve essere ordinata la cronologia</string>
     <string name="root_mode_desc">Se disponibile, è possibile ibernare le applicazioni</string>
     <string name="root_mode_name">Modalità root</string>
     <string name="root_mode_error">Impossibile ottenere i privilegi di root.</string>
@@ -119,21 +115,16 @@
     <string name="exclude_favorites_history">Escludi preferiti dalla cronologia</string>
     <string name="favorites_hide">Nascondi barra dei preferiti all\'avvio</string>
     <string name="pref_hide_navbar">Nascondi barra di navigazione</string>
-    <string name="pref_hide_navbar_desc">Nascondi la barra di navigazione, attivando la modalità a schermo intero</string>
     <string name="pref_hide_statusbar">Nascondi barra di stato</string>
-    <string name="pref_hide_statusbar_desc">Nascondi la barra delle notifiche, attivando la modalità a schermo Intero</string>
     <string name="restart_desc">Risolve problemi di visualizzazione per temi e contatti</string>
     <string name="restart_name">Riavvia KISS</string>
     <string name="restart_warn">Vuoi riavviare KISS\? Se KISS non è il tuo launcher predefinito verrà solo terminato.</string>
     <string name="default_launcher_title">Cambia launcher predefinito</string>
     <string name="items_title" tools:ignore="PluralsCandidate">%d elementi</string>
     <string name="alternate_history_inputs">Altri elementi della cronologia</string>
-    <string name="keyboard_options">Tastiera</string>
-    <string name="misc">Altro</string>
     <string name="toast_favorites_removed">\"%s\" rimosso dai preferiti</string>
     <string name="menu_favorites_remove">Rimuovi dai preferiti</string>
     <string name="share">Condividi…</string>
-    <string name="number_of_display_items">Numero massimo di risultati</string>
     <string name="main_color">Colore principale</string>
     <string name="notification_bar_color">Colore barra notifiche</string>
     <string name="color_transparent_dark">Trasparente scuro</string>
@@ -157,8 +148,6 @@
     <string name="history_settings_summary">Elimina cronologia, congelala, …</string>
     <string name="user_interface_summary">Temi, trasparenza e colori</string>
     <string name="providers_summary">Modifica risultati, aggiungi motori di ricerca web, …</string>
-    <string name="title_ux">Esperienza utente</string>
-    <string name="user_experience_summary">Interfaccia minimale, impostazioni tastiera, …</string>
     <string name="title_favorites">Preferiti</string>
     <string name="history_favorites_summary">Elimina preferiti, rimuovi barra preferiti, …</string>
     <string name="title_wallpaper">Interazione con sfondi animati</string>
@@ -187,8 +176,6 @@
     <string name="show_history">Mostra cronologia</string>
     <string name="show_untagged">Mostra elementi senza etichetta</string>
     <string name="pref_show_untagged">Mostra azione senza etichetta</string>
-    <string name="reset_excluded_from_history_apps_name">Elimina elenco app escluse dalla cronologia</string>
-    <string name="reset_excluded_from_history_apps_warn">Vuoi eliminare l\'elenco delle app escluse dalla cronologia\?</string>
     <string name="settings_excluded_apps">Voci escluse</string>
     <string name="ui_excluded_from_history_apps">Modifica app escluse dalla cronologia</string>
     <string name="excluded_app_history_added">Applicazione esclusa dalla cronologia. Puoi ripristinarla dalle impostazioni di KISS</string>
@@ -222,7 +209,6 @@
     <string name="enable_double_tap_to_lock">La funzione \"Doppio tocco per blocco schermo\" richiede l\'API di accessibilità di Android. Nessuna informazione verrà elaborata o memorizzata. Per utilizzare questa funzione, abilita KISS nella schermata seguente.</string>
     <string name="gesture_down_name">Scorrimento verso il basso</string>
     <string name="gesture_up_name">Scorrimento verso l\'alto</string>
-    <string name="show_subicons">Icona app per le scorciatoie</string>
     <string name="gesture_history">Mostra cronologia</string>
     <string name="gesture_apps">Mostra elenco app</string>
     <string name="gesture_notifications">Mostra pannello notifiche</string>
@@ -245,7 +231,6 @@
     <string name="theme_customize_enabled">Attivo</string>
     <string name="theme_customize_disabled">Disattivato</string>
     <string name="theme_shadow">Contorno testo (ombra)</string>
-    <string name="theme_customisation">Personalizzazione avanzata</string>
     <string name="hide_search_bar_hint">Rimuovi scritta dalla barra di ricerca</string>
     <string name="theme_wallpaper">Sfondo</string>
     <string name="gesture_right_name">Scorrimento verso destra</string>
@@ -254,7 +239,6 @@
     <string name="icons_category">Icone</string>
     <string name="contacts_shape_summary">Forma delle icone dei contatti</string>
     <string name="contact_pack_mask">Forma icone contatti</string>
-    <string name="contact_pack_mask_summary">Usa la maschera dell\'icon pack per i contatti</string>
     <string name="force_shape_summary">Usa una maschera adattiva per le icone non adattive</string>
     <string name="force_shape">Forza forma sfondo</string>
     <string name="force_adaptive_summary">Riduce la scala delle icone non adattive e le posiziona su uno sfondo bianco</string>
@@ -276,7 +260,6 @@
     <string name="import_settings">Importa impostazioni ed etichette</string>
     <string name="export_settings">Esporta impostazioni ed etichette</string>
     <string name="clipboard_warning_dialog">Il contenuto degli appunti verrà sovrascritto.</string>
-    <string name="title_import_export">Importa ed esporta</string>
     <string name="theme_bar_color">Colore della barra dei preferiti e della barra di ricerca</string>
     <string name="gesture_homescreen">Vai alla homescreen</string>
     <string name="shape_octagon">Ottagono</string>
@@ -302,8 +285,6 @@
     <string name="results_size">Dimensione risultati</string>
     <string name="large_result_list_margins">Margini elenco più grandi</string>
     <string name="ui_excluded_from_shortcuts_apps">Visualizza o modifica elenco delle app che non possono mostrare scorciatoie</string>
-    <string name="reset_excluded_app_shortcuts_name">Ripristina elenco delle app che non possono mostrare scorciatoie</string>
-    <string name="reset_excluded_app_shortcuts_warn">Ripristinare l\'elenco delle app che non possono mostrare scorciatoie\?</string>
     <string name="color_system">Colori di sistema</string>
     <string name="icons_themed_name">Icone a tema</string>
     <string name="icons_themed_summary">Icone colorate con colori di sistema (beta)</string>
@@ -325,7 +306,6 @@
     <string name="gesture_hide_keyboard">Nascondi tastiera</string>
     <string name="results_size_smallest">Molto piccolo</string>
     <string name="results_size_small">Piccolo</string>
-    <string name="tagged_result_sort_mode_desc">L\'ordine dei risultati quando vengono mostrati per etichetta</string>
     <string name="tagged_result_sort_mode_name">Ordine risultati etichette</string>
     <string name="enable_notification_history">Mostra nella cronologia app con nuove notifiche</string>
     <string name="history_time">Utilizzo alla stessa ora del giorno</string>
@@ -337,7 +317,6 @@
     <string name="unlock_private_space">Sblocca spazio privato</string>
     <string name="lock_private_space">Blocca spazio privato</string>
     <string name="pref_result_highlighting">Evidenzia risultati di ricerca</string>
-    <string name="pref_result_highlighting_summary">Definisce come vengono evidenziate le corrispondenze nei risultati.</string>
     <string name="result_highlighting_text_color">Cambia colore del testo</string>
     <string name="result_highlighting_underline">Sottolineato</string>
     <string name="result_highlighting_bold">Grassetto</string>

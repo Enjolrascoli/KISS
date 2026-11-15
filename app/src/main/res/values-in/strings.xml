@@ -7,10 +7,8 @@
     <string name="ui_item_phone">Panggil “%s”</string>
     <string name="ui_item_contact_hint_message">Pesan</string>
     <string name="ui_item_contact_hint_call">Panggil</string>
-    <string name="title_ui">Antarmuka pengguna</string>
     <string name="title_history">Riwayat</string>
     <string name="title_providers">Cari</string>
-    <string name="title_advanced">Lanjutan</string>
     <string name="menu_settings">Pengaturan perangkat…</string>
     <string name="ui_empty_1">Mulai mencari untuk apapun</string>
     <string name="ui_empty_1_sub">Apl, kontak, pengaturan, …</string>
@@ -27,7 +25,6 @@
     <string name="main_kiss">Tampilkan daftar apl</string>
     <string name="main_kiss_back">Tampilkan riwayat</string>
     <string name="reset_name">Hapus riwayat</string>
-    <string name="reset_excluded_apps_name">Atur ulang daftar apl yang dikecualikan</string>
     <string name="reset_excluded_apps_warn">Apakah Anda benar-benar ingin mengatur ulang daftar pengecualian apl Anda\?</string>
     <string name="reset_warn">Apakah Anda benar-benar ingin menghapus riwayat Anda\?</string>
     <string name="reset_favorites_name">Hapus daftar favorit Anda</string>
@@ -91,7 +88,6 @@
     <string name="ui_excluded_apps_dialog_title">Pilih apl untuk dikecualikan</string>
     <string name="search_providers_title">Pilih penyedia pencarian web</string>
     <string name="history_mode_name">Mode riwayat</string>
-    <string name="history_mode_desc">Pilih bagaimana riwayat harus diurutkan</string>
     <string name="menu_shortcut_remove">Hapus pintasan</string>
     <string name="enable_favorites_bar">Tampilkan favorit di atas bilah pencarian</string>
     <string name="exclude_favorites_history">Kecualikan favorit dari riwayat</string>
@@ -100,8 +96,6 @@
     <string name="settings_dev">Pengaturan pengembang</string>
     <string name="settings_accessibility">Aksesibilitas</string>
     <string name="alternate_history_inputs">Sumber riwayat alternatif</string>
-    <string name="keyboard_options">Opsi keyboard</string>
-    <string name="misc">Lainnya</string>
     <string name="ui_item_visit">Kunjungi “%1$s”</string>
     <string name="settings_sound">Suara dan volume</string>
     <string name="settings_display">Tampilan</string>
@@ -113,7 +107,6 @@
     <string name="menu_favorites_remove">Hapus favorit</string>
     <string name="tags_visible">Tampilkan tag</string>
     <string name="share">Bagikan ke…</string>
-    <string name="number_of_display_items">Jumlah maksimum hasil pencarian dan riwayat</string>
     <string name="main_color">Warna utama</string>
     <string name="notification_bar_color">Warna bilah notifikasi</string>
     <string name="color_transparent_dark">Gelap transparan</string>
@@ -127,8 +120,6 @@
     <string name="wp_drag_animate">Gulir wallpaper</string>
     <string name="wp_drag_animate_desc">Geser ← → untuk menggulir wallpaper</string>
     <string name="wp_animate_center">Pusatkan wallpaper</string>
-    <string name="reset_excluded_from_history_apps_name">Atur ulang daftar apl yang dikecualikan dari riwayat</string>
-    <string name="reset_excluded_from_history_apps_warn">Apakah Anda benar-benar ingin mengatur ulang apl yang dikecualikan dari daftar riwayat\?</string>
     <string name="settings_excluded_apps">Entri dikecualikan</string>
     <string name="ui_excluded_from_history_apps">Lihat atau sunting apl yang dikecualikan dari riwayat</string>
     <string name="contacts_call_on_click">Ketuk untuk memanggil kontak</string>
@@ -154,14 +145,10 @@
     <string name="search_provider_error_exists">Penyedia dengan nama ini sudah ada</string>
     <string name="lwp_drag">Emulasi event seret untuk wallpaper</string>
     <string name="pref_hide_navbar">Sembunyikan bilah navigasi</string>
-    <string name="pref_hide_navbar_desc">Sembunyikan bilah navigasi dan aktifkan mode imersif</string>
     <string name="pref_hide_statusbar">Sembunyikan bilah status</string>
-    <string name="pref_hide_statusbar_desc">Sembunyikan bilah nofitikasi dan aktifkan mode imersif</string>
     <string name="history_settings_summary">Atur ulang riwayat Anda, bekukan, …</string>
     <string name="user_interface_summary">Tema, transparansi, dan warna</string>
     <string name="providers_summary">Sesuaikan hasil pencarian, tambahkan mesin pencarian khusus, …</string>
-    <string name="title_ux">Pengalaman pengguna</string>
-    <string name="user_experience_summary">UI minimalis, pengaturan keyboard, …</string>
     <string name="title_favorites">Favorit</string>
     <string name="history_favorites_summary">Atur ulang favorit Anda, buang bilah favorit, …</string>
     <string name="freeze_history_summary">Simpan riwayat apa adanya sampai dinonaktifkan</string>
@@ -219,7 +206,6 @@
     <string name="lock_service_description">Layar kunci dari Peluncur KISS</string>
     <string name="double_tap_to_lock">Ketuk dua kali untuk mengunci layar</string>
     <string name="gestures">Gestur</string>
-    <string name="show_subicons">Tampilkan ikon apl pada pintasan</string>
     <string name="theme_shadow">Garis luar teks (bayangan)</string>
     <string name="gesture_history">Tampilkan riwayat</string>
     <string name="gesture_apps">Tampilkan daftar apl</string>
@@ -242,7 +228,6 @@
     <string name="theme_customize_enabled">Aktif</string>
     <string name="theme_customize_disabled">Nonaktif</string>
     <string name="theme_customize_default">Default tema</string>
-    <string name="theme_customisation">Kustomisasi tema lanjutan</string>
     <string name="hide_search_bar_hint">Buang teks petunjuk dari bilah pencarian</string>
     <string name="theme_wallpaper">Wallpaper</string>
     <string name="gesture_right_name">Tindakan geser ke kanan</string>
@@ -251,7 +236,6 @@
     <string name="icons_category">Ikon</string>
     <string name="contacts_shape_summary">Bentuk dari ikon kontak</string>
     <string name="contact_pack_mask">Bentuk ikon kontak</string>
-    <string name="contact_pack_mask_summary">Gunakan lapisan paket ikon untuk kontak</string>
     <string name="force_shape_summary">Gunakan lapisan adaptif pada ikon non-adaptif</string>
     <string name="force_shape">Paksa bentuk latar</string>
     <string name="force_adaptive_summary">Untuk ikon non-adaptif, kurangi skala dan pasangkan dengan latar putih</string>
@@ -273,7 +257,6 @@
     <string name="import_settings">Impor pengaturan dan tag</string>
     <string name="export_settings">Ekspor pengaturan dan tag</string>
     <string name="clipboard_warning_dialog">Ini akan menimpa ulang konten papan klip Anda.</string>
-    <string name="title_import_export">Impor &amp; ekspor</string>
     <string name="theme_bar_color">Warna bilah favorit dam bilah pencarian</string>
     <string name="gesture_homescreen">Ke Beranda</string>
     <string name="adaptive_shape_summary">Bentuk ikon apl</string>
@@ -301,8 +284,6 @@
     <string name="color_system">Warna Sistem</string>
     <string name="icons_themed_name">Ikon bertema</string>
     <string name="icons_themed_summary">Ikon diwarnai dengan warna sistem (beta)</string>
-    <string name="reset_excluded_app_shortcuts_name">Setel ulang daftar aplikasi yang dikecualikan dari menampilkan pintasan</string>
-    <string name="reset_excluded_app_shortcuts_warn">Apakah Anda benar-benar ingin mengatur ulang daftar aplikasi yang dikecualikan dari menampilkan pintasan\?</string>
     <string name="ui_excluded_from_shortcuts_apps">Lihat atau edit aplikasi yang dikecualikan dari menampilkan pintasan</string>
     <string name="search_provider_error_uri_cannot_be_handle">URI tidak dapat ditangani oleh aplikasi apa pun di perangkat Anda.</string>
     <string name="menu_shortcut_pin">Pin pintasan</string>
@@ -322,7 +303,6 @@
     <string name="import_settings_upgrade_kiss">Silakan perbarui versi KISS Anda sebelum mengimpor pengaturan tersebut.</string>
     <string name="results_size_default">Bawaan</string>
     <string name="tagged_result_sort_mode_name">Mode urutan hasil bertag</string>
-    <string name="tagged_result_sort_mode_desc">Pilih bagaimana hasil diurutkan saat ditampilkan menurut tag</string>
     <string name="import_settings_version_missing">Tidak bisa mengimpor pengaturan. Versi tidak ditemukan.</string>
     <string name="enable_notification_history">Tampilkan apl dengan notifikasi baru dalam riwayat</string>
     <string name="history_time">Diakses pada hari dan waktu yang sama</string>
@@ -337,7 +317,6 @@
     <string name="unlock_private_space">Buka Kunci Ruang Pribadi</string>
     <string name="lock_private_space">Kunci Ruang Pribadi</string>
     <string name="pref_result_highlighting">Sorot hasil pencarian</string>
-    <string name="pref_result_highlighting_summary">Menentukan cara kecocokan dalam hasil disorot.</string>
     <string name="result_highlighting_text_color">Ubah warna teks</string>
     <string name="result_highlighting_underline">Garis bawah</string>
     <string name="result_highlighting_bold">Tebal</string>

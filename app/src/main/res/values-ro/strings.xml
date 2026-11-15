@@ -7,10 +7,8 @@
     <string name="ui_item_phone">Sună \"%s\"</string>
     <string name="ui_item_contact_hint_message">Mesaj</string>
     <string name="ui_item_contact_hint_call">Sună</string>
-    <string name="title_ui">Interfață</string>
     <string name="title_history">Istoric</string>
     <string name="title_providers">Căutare</string>
-    <string name="title_advanced">Avansate</string>
     <string name="menu_settings">Setări dispozitiv…</string>
     <string name="ui_empty_1">Pornește căutarea</string>
     <string name="ui_empty_1_sub">Aplicații, contacte, setări, …</string>
@@ -27,7 +25,6 @@
     <string name="main_kiss">Arată lista de aplicații</string>
     <string name="main_kiss_back">Arată istoric</string>
     <string name="reset_name">Curăță istoric</string>
-    <string name="reset_excluded_apps_name">Curăță lista de aplicații excluse din KISS</string>
     <string name="reset_excluded_apps_warn">Chiar doriți curățarea listei de aplicații excluse?</string>
     <string name="reset_warn">Chiar doriți curățarea istoricului?</string>
     <string name="reset_favorites_name">Curăță lista de favorite</string>
@@ -90,7 +87,6 @@
     <string name="ui_excluded_apps_dialog_title">Selectare aplicații de exclus</string>
     <string name="search_providers_title">Selectează furnizorii de căutări pe internet</string>
     <string name="history_mode_name">Mod afișare istoric</string>
-    <string name="history_mode_desc">Selectează modul în care este sortat istoricul</string>
     <string name="menu_shortcut_remove">Șterge scurtătura</string>
     <string name="enable_favorites_bar">Arată favoritele deasupra barei de căutare</string>
     <string name="exclude_favorites_history">Exclude aplicațiile favorite din istoric</string>
@@ -99,8 +95,6 @@
     <string name="settings_dev">Optiuni dezvoltator</string>
     <string name="settings_accessibility">Accesibilitate</string>
     <string name="alternate_history_inputs">Surse alternative istoric</string>
-    <string name="keyboard_options">Opțiuni tastatură</string>
-    <string name="misc">Diverse</string>
     <string name="ui_item_visit">Vizitează “%1$s”</string>
     <string name="settings_sound">Sunet si volum</string>
     <string name="settings_display">Afisare</string>
@@ -114,10 +108,9 @@
     <string name="share">Partajează cu…</string>
     <string name="main_color">Culoare primară</string>
     <string name="notification_bar_color">Culoare bară notificare</string>
-    <string name="color_picker_default_title">"Selectați o culoare"</string>
+    <string name="color_picker_default_title">Selectați o culoare</string>
     <string name="color_swatch_description">Culoare %1$d</string>
     <string name="color_swatch_description_selected">Culoarea %1$d selectată</string>
-    <string name="number_of_display_items">Numărul maxim de rezultate în căutare și istoric</string>
     <string name="color_transparent_dark">Transparent întunecat</string>
     <string name="color_transparent_white">Transparent alb</string>
     <string name="color_transparent">Transparentă</string>
@@ -145,14 +138,10 @@
     <string name="wp_drag_animate">Derulează fundalul</string>
     <string name="wp_drag_animate_desc">Trage ← → pentru a derula fundalul</string>
     <string name="pref_hide_navbar">"Ascunde bara de navigație "</string>
-    <string name="pref_hide_navbar_desc">Ascunde bara de navigație și activează modul imersiv</string>
     <string name="pref_hide_statusbar">Ascunde bara de stare</string>
-    <string name="pref_hide_statusbar_desc">Ascunde bara de notificări și activează modul imersiv</string>
     <string name="history_settings_summary">Resetează istoric, îngheață istoric, …</string>
     <string name="user_interface_summary">Teme, transparență și culori</string>
     <string name="providers_summary">Setează rezultate căutare, adaugă motoare de căutare personalizate, …</string>
-    <string name="title_ux">Interacțiune</string>
-    <string name="user_experience_summary">Interfață minimalistă, setări tastatură, …</string>
     <string name="title_favorites">Favorite</string>
     <string name="history_favorites_summary">Resetare favorite, eliminare bară favorite, …</string>
     <string name="freeze_history_summary">Păstrează istoric cum e acum până la debifare</string>
@@ -183,8 +172,6 @@
     <string name="pref_show_untagged">Arată acțiuni pentru neetichetate</string>
     <string name="pref_hide_circle">Ascunde cercul KISS și meniul</string>
     <string name="pref_hide_circle_desc">Butoanele vor funcționa în continuare, dar vor fi invizibile.</string>
-    <string name="reset_excluded_from_history_apps_name">Curăță lista de aplicații excluse din istoric</string>
-    <string name="reset_excluded_from_history_apps_warn">Chiar doriți curățarea listei de aplicații excluse din istoric\?</string>
     <string name="settings_excluded_apps">Intrări excluse</string>
     <string name="ui_excluded_from_history_apps">Editare aplicații excluse din istoric</string>
     <string name="excluded_app_history_added">Aplicație exclusă din istoric. Anulează asta în setările KISS</string>
@@ -218,7 +205,6 @@
     <string name="lock_service_description">Blocare ecran din lansatorul KISS</string>
     <string name="double_tap_to_lock">Atingeți de două ori pentru a bloca ecranul</string>
     <string name="gestures">Gesturi</string>
-    <string name="show_subicons">Arată iconița aplicației pe scurtături</string>
     <string name="history_frecency">Recentele frecvente primele</string>
     <string name="history_frequency">Frecvent accesate primele</string>
     <string name="history_recency">Recent accesate primele</string>
@@ -241,7 +227,6 @@
     <string name="theme_customize_disabled">Dezactivat</string>
     <string name="theme_customize_default">Temă implicită</string>
     <string name="theme_shadow">Contur text (umbră)</string>
-    <string name="theme_customisation">Personalizare avansată a temei</string>
     <string name="hide_search_bar_hint">Elimină textul indiciu din bara de căutare</string>
     <string name="theme_wallpaper">Fundal</string>
     <string name="gesture_right_name">Acțiune la glisare spre dreapta</string>
@@ -250,7 +235,6 @@
     <string name="icons_category">Pictograme</string>
     <string name="contacts_shape_summary">Forma pictogramei contactelor</string>
     <string name="contact_pack_mask">Pictograme persoane de contact</string>
-    <string name="contact_pack_mask_summary">Utilizarea măștii pachetului de pictograme pentru persoanele de contact</string>
     <string name="force_shape_summary">Utilizați masca adaptivă pe pictogramele neadaptative</string>
     <string name="force_shape">Forțează forma fundalului</string>
     <string name="force_adaptive_summary">Pentru pictogramele non-adaptive, reduceți scalarea și așezați-le pe un fundal alb</string>
@@ -272,7 +256,6 @@
     <string name="import_settings">Importul setărilor și a etichetelor</string>
     <string name="export_settings">Exportul setărilor și a etichetelor</string>
     <string name="clipboard_warning_dialog">Aceasta va suprascrie conținutul din clipboard.</string>
-    <string name="title_import_export">Import &amp; export</string>
     <string name="theme_bar_color">Culoare bară de favorite și bară de căutare</string>
     <string name="gesture_homescreen">Mergeți la ecranul principal</string>
     <string name="shape_square">Pătrat</string>
@@ -298,8 +281,6 @@
     <string name="results_size">Dimensiune rezultate</string>
     <string name="large_result_list_margins">Margini de listă mai mari</string>
     <string name="ui_excluded_from_shortcuts_apps">Vizualizați sau editați aplicațiile excluse de la afișarea comenzilor rapide</string>
-    <string name="reset_excluded_app_shortcuts_name">Resetați lista de aplicații excluse de la afișarea comenzilor rapide</string>
-    <string name="reset_excluded_app_shortcuts_warn">Chiar doriți să resetați lista de aplicații excluse de la afișarea comenzilor rapide\?</string>
     <string name="icons_themed_name">Icoane tematizate</string>
     <string name="color_system">Culori de sistem</string>
     <string name="icons_themed_summary">Pictogramele sunt colorate cu culorile sistemului (beta)</string>
@@ -322,7 +303,6 @@
     <string name="tags_category">Etichete</string>
     <string name="tagged_result_sort_mode_name">Mod sortare etichete</string>
     <string name="tagged_result_sort_mode_default">Implicit, la fel ca istoricul</string>
-    <string name="tagged_result_sort_mode_desc">Selectați modul de sortare a rezultatelor atunci când sunt afișate după etichetă</string>
     <string name="enable_notification_history">Afișați aplicațiile cu notificări noi în istoric</string>
     <string name="history_time">Accesat în același moment</string>
     <string name="menu_widget_settings">Setări</string>
@@ -333,7 +313,6 @@
     <string name="unlock_private_space">Deblocare spațiu privat</string>
     <string name="lock_private_space">Blocare spațiu privat</string>
     <string name="pref_result_highlighting">Evidențiază rezultatul căutării</string>
-    <string name="pref_result_highlighting_summary">Definește cum sunt evidențiate rezultatele.</string>
     <string name="result_highlighting_text_color">Modificare culori text</string>
     <string name="result_highlighting_underline">Subliniere</string>
     <string name="result_highlighting_bold">Îngroșat</string>

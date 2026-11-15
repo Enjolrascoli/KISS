@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:title="@string/title_providers">
+    <PreferenceCategory app:title="@string/search_sources">
+        <SwitchPreference
+            app:defaultValue="true"
+            app:key="enable-contacts"
+            app:title="@string/contacts_name" />
+        <SwitchPreference
+            app:defaultValue="true"
+            app:key="enable-shortcuts"
+            app:summary="@string/shortcuts_summary"
+            app:title="@string/shortcuts_name">
+            <extra
+                android:name="minSdk"
+                android:value="26" />
+        </SwitchPreference>
+        <SwitchPreference
+            app:defaultValue="true"
+            app:key="enable-search"
+            app:summary="@string/search_provider_summary"
+            app:title="@string/search_provider_toggle" />
+        <SwitchPreference
+            app:defaultValue="true"
+            app:key="enable-settings"
+            app:summary="@string/settings_summary"
+            app:title="@string/settings_name" />
+        <SwitchPreference
+            app:defaultValue="true"
+            app:key="enable-timer"
+            app:summary="@string/timer_description"
+            app:title="@string/timer_name" />
+        <SwitchPreference
+            app:defaultValue="true"
+            app:key="enable-calculator"
+            app:summary="@string/calculator_description"
+            app:title="@string/calculator_name" />
+        <SwitchPreference
+            app:defaultValue="true"
+            app:key="enable-phone"
+            app:summary="@string/phone_description"
+            app:title="@string/phone_name" />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/search_results_options">
+        <fr.neamar.kiss.preference.RangeEditTextPreference
+            app:defaultValue="20"
+            app:key="number-of-search-results"
+            app:title="@string/number_of_search_results"
+            app:maxValue="150"
+            app:minValue="1"
+            app:useSimpleSummaryProvider="true" />
+        <ListPreference
+            app:defaultValue="default"
+            app:entries="@array/resultsSizeEntries"
+            app:entryValues="@array/resultsSizeValues"
+            app:key="results-size"
+            app:title="@string/results_size"
+            app:useSimpleSummaryProvider="true">
+            <extra
+                android:name="restart"
+                android:value="launcher" />
+        </ListPreference>
+        <SwitchPreference
+            app:defaultValue="false"
+            app:key="large-result-list-margins"
+            app:title="@string/large_result_list_margins">
+            <extra
+                android:name="restart"
+                android:value="launcher" />
+        </SwitchPreference>
+        <ListPreference
+            app:defaultValue="default"
+            app:entries="@array/separatorEntries"
+            app:entryValues="@array/separatorValues"
+            app:key="theme-separator"
+            app:title="@string/theme_separator"
+            app:useSimpleSummaryProvider="true">
+            <extra
+                android:name="restart"
+                android:value="launcher" />
+        </ListPreference>
+        <MultiSelectListPreference
+            app:defaultValue="@array/resultHighlightingDefault"
+            app:entries="@array/resultHighlightingEntries"
+            app:entryValues="@array/resultHighlightingValues"
+            app:key="pref-result-highlighting"
+            app:title="@string/pref_result_highlighting" />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/search_result_types">
+        <Preference
+            app:fragment="fr.neamar.kiss.settings.AppsSettingsFragment"
+            app:key="search-apps"
+            app:title="@string/settings_applications" />
+        <Preference
+            app:dependency="enable-contacts"
+            app:fragment="fr.neamar.kiss.settings.ContactsSettingsFragment"
+            app:key="search-contacts"
+            app:title="@string/contacts_name" />
+        <Preference
+            app:dependency="enable-shortcuts"
+            app:fragment="fr.neamar.kiss.settings.ShortcutsSettingsFragment"
+            app:key="search-shortcuts"
+            app:title="@string/shortcuts_name">
+            <extra
+                android:name="minSdk"
+                android:value="26" />
+        </Preference>
+        <Preference
+            app:dependency="enable-search"
+            app:fragment="fr.neamar.kiss.settings.WebSearchSettingsFragment"
+            app:key="search-web"
+            app:title="@string/search_name" />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -7,7 +7,6 @@
     <string name="ui_item_phone">Bel “%s”</string>
     <string name="ui_item_contact_hint_message">SMS</string>
     <string name="ui_item_contact_hint_call">Bel</string>
-    <string name="title_ui">Uiterlijk en bediening</string>
     <string name="title_history">Geschiedenis</string>
     <string name="title_providers">Zoeken</string>
     <string name="menu_settings">Apparaatinstellingen…</string>
@@ -47,7 +46,6 @@
     <string name="menu_app_details">App-informatie</string>
     <string name="menu_app_uninstall">Verwijderen</string>
     <string name="theme_name">Thema</string>
-    <string name="title_advanced">Geavanceerd</string>
     <string name="root_mode_name">Beheerdersmodus</string>
     <string name="root_mode_error">Beheertoegang verkrijgen is mislukt.</string>
     <string name="menu_contact_copy_phone">Kopieer telefoonnummer</string>
@@ -57,7 +55,6 @@
     <string name="toast_hibernate_error">%s kan niet gepauzeerd worden.</string>
     <string name="ui_item_visit">Bezoek “%1$s”</string>
     <string name="shortcuts_name">Snelkoppelingen</string>
-    <string name="reset_excluded_apps_name">Geen apps meer uitsluiten van KISS</string>
     <string name="reset_excluded_apps_warn">Wil je de lijst met apps uitgesloten van KISS echt wissen?</string>
     <string name="ui_excluded_apps">Apps uitsluiten van KISS</string>
     <string name="ui_excluded_apps_dialog_title">Apps selecteren</string>
@@ -72,7 +69,6 @@
     <string name="icons_hide_desc">Bruikbaar op langzame apparaten</string>
     <string name="search_providers_title">Aanbieders van zoekmachines selecteren</string>
     <string name="history_mode_name">Geschiedenismodus</string>
-    <string name="history_mode_desc">Sorteerwijze van de geschiedenis selecteren</string>
     <string name="freeze_history_name">Geschiedenis bevriezen</string>
     <string name="freeze_history_warn">Weet je zeker dat je de geschiedenis wil bevriezen? Je geschiedenis verandert dan niet meer.</string>
     <string name="icons_pack_name">Pictogrammenbundel (ADW.Launcher-thema)</string>
@@ -106,16 +102,13 @@
     <string name="default_launcher_title">Standaard-launcher wijzigen</string>
     <string name="items_title">%d items</string>
     <string name="alternate_history_inputs">Geschiedenisinvoer keuzes</string>
-    <string name="keyboard_options">Toetsenbordopties</string>
-    <string name="misc">Overige</string>
     <string name="toast_favorites_removed">%s is verwijderd uit favorieten</string>
     <string name="menu_favorites_remove">Favoriet verwijderen</string>
     <string name="tags_visible">Labels tonen</string>
     <string name="share">Delen met…</string>
     <string name="main_color">Primaire kleur</string>
     <string name="notification_bar_color">Kleur meldingenbalk</string>
-    <string name="number_of_display_items">Maximaal aantal zoek- en geschiedenisresultaten</string>
-    <string name="color_picker_default_title">"Een kleur selecteren"</string>
+    <string name="color_picker_default_title">Een kleur selecteren</string>
     <string name="color_swatch_description">Kleur %1$d</string>
     <string name="color_swatch_description_selected">Kleur %1$d geselecteerd</string>
     <string name="color_transparent_dark">Transparant donker</string>
@@ -145,14 +138,10 @@
     <string name="wp_drag_animate">Achtergrond scrollen</string>
     <string name="wp_drag_animate_desc">Sleep ← → om achtergrond te verschuiven</string>
     <string name="pref_hide_navbar">Navigatiebalk verbergen</string>
-    <string name="pref_hide_navbar_desc">Navigatiebalk verbergen en de modus volledig scherm inschakelen</string>
     <string name="pref_hide_statusbar">Statusbalk verbergen</string>
-    <string name="pref_hide_statusbar_desc">Meldingenbalk verbergen en modus volledig scherm inschakelen</string>
     <string name="history_settings_summary">Geschiedenis wissen, bevriezen, …</string>
     <string name="user_interface_summary">Thema\'s, transparantheid en kleuren</string>
     <string name="providers_summary">Zoekresultaten aanpassen, zoekmachines toevoegen, …</string>
-    <string name="title_ux">Gebruikersbeleving</string>
-    <string name="user_experience_summary">Minimalistisch uiterlijk, toetsenbordinstellingen, …</string>
     <string name="title_favorites">favorieten</string>
     <string name="history_favorites_summary">Favorieten herstellen, favorietenbalk verwijderen, …</string>
     <string name="freeze_history_summary">Geschiedenis vastzetten tot uitschakeling</string>
@@ -177,8 +166,6 @@
     <string name="popup_tags_title">Beschikbare labels</string>
     <string name="popup_tags_actions">Beschikbare acties</string>
     <string name="show_history">Geschiedenis tonen</string>
-    <string name="reset_excluded_from_history_apps_name">Geen apps meer uitsluiten van de geschiedenis</string>
-    <string name="reset_excluded_from_history_apps_warn">Wil je de lijst met apps uitgesloten van de geschiedenis echt wissen?</string>
     <string name="settings_excluded_apps">Uitgesloten apps</string>
     <string name="contacts_call_on_click">Tik om contacten te bellen</string>
     <string name="search_results_options">Zoekresultaten</string>
@@ -188,11 +175,9 @@
     <string name="search_provider_default">Standaardzoekmachine bij Enter</string>
     <string name="regenerate_shortcuts">Snelkoppelingen opnieuw aanmaken</string>
     <string name="ui_excluded_from_history_apps">Apps uitsluiten van de geschiedenis</string>
-    <string name="title_import_export">Importeren &amp; exporteren</string>
     <string name="search_provider_error_uri_cannot_be_handle">Gegeven URI kan door geen enkele app worden gebruikt.</string>
     <string name="large_result_list_margins">Grotere lijstmarges</string>
     <string name="custom_icon_preview">Voorbeeld</string>
-    <string name="theme_customisation">Geavanceerd thema-aanpassing</string>
     <string name="theme_shadow">Tekstomtrek (schaduw)</string>
     <string name="theme_customize_enabled">Ingeschakeld</string>
     <string name="theme_dark">Donker</string>
@@ -235,8 +220,6 @@
     <string name="menu_app_rename">Hernoemen</string>
     <string name="gesture_launch_pojo">Lanceer…</string>
     <string name="exclude_favorites_apps">Favorieten van de app-lijst uitsluiten</string>
-    <string name="reset_excluded_app_shortcuts_name">Geen apps meer met verborgen snelkoppelingen</string>
-    <string name="reset_excluded_app_shortcuts_warn">Wil je de lijst met apps die geen snelkoppeling mogen tonen echt wissen?</string>
     <string name="pref_hide_circle_desc">Knoppen zullen nog werken, maar onzichtbaar zijn.</string>
     <string name="tags_category">Labels</string>
     <string name="export_settings_done">Instellingen naar klembord geëxporteerd.</string>
@@ -317,12 +300,9 @@
     <string name="shape_squircle">Afgerond vierkant</string>
     <string name="history_time">Op hetzelfde tijdstip geopend</string>
     <string name="gesture_notifications">Meldingsschaduw tonen</string>
-    <string name="show_subicons">App-pictogram tonen op snelkoppeling</string>
     <string name="tagged_result_sort_mode_default">Standaard, zoals geschiedenismodus</string>
     <string name="tagged_result_sort_mode_name">Sorteermodus gelabelde resultaten</string>
-    <string name="contact_pack_mask_summary">Masker van pictogrambundel voor contacten gebruiken</string>
     <string name="force_shape_summary">Aanpasbaar masker voor niet-aanpasbare pictogrammen gebruiken</string>
-    <string name="tagged_result_sort_mode_desc">Sorteervolgorde als getoond per label selecteren</string>
     <string name="contacts_shape_summary">Vorm contactpictogram</string>
     <string name="force_adaptive_summary">Niet-aanpasbare pictogrammen reduceren en op witte achtergrond plaatsen</string>
     <string name="shared_text_empty">Oeps.. de tekst blijkt leeg.</string>
@@ -333,7 +313,6 @@
     <string name="unlock_private_space">Privéruimte ontgrendelen</string>
     <string name="lock_private_space">Privéruimte vergrendelen</string>
     <string name="pref_result_highlighting">Zoekresultaat markeren</string>
-    <string name="pref_result_highlighting_summary">Bepaalt hoe zoekresultaten gemarkeerd worden.</string>
     <string name="result_highlighting_text_color">Tekstkleur wijzigen</string>
     <string name="result_highlighting_underline">Onderlijnen</string>
     <string name="result_highlighting_bold">Vet</string>

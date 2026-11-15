@@ -17,7 +17,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -247,7 +246,7 @@ public class ContactsResult extends CallResult<ContactsPojo> {
             ComponentName componentName = KissApplication.getMimeTypeCache(context).getComponentName(context, mimeType);
             if (componentName != null) {
                 IconsHandler iconsHandler = KissApplication.getApplication(context).getIconsHandler();
-                appDrawable = iconsHandler.getDrawableIconForPackage(context, PackageManagerUtils.getLaunchingComponent(context, componentName, pojo.getUserHandle()), pojo.getUserHandle());
+                appDrawable = iconsHandler.getDrawableIconForPackage(PackageManagerUtils.getLaunchingComponent(context, componentName, pojo.getUserHandle()), pojo.getUserHandle());
             }
             if (appDrawable == null) {
                 // This should never happen, let's just return the generic activity icon
@@ -299,19 +298,11 @@ public class ContactsResult extends CallResult<ContactsPojo> {
             synchronized (this) {
                 if (icon == null) {
                     IconsHandler iconsHandler = KissApplication.getApplication(context).getIconsHandler();
-                    icon = iconsHandler.getDrawableForContact(context, pojo, pojo.icon, getBackgroundColor(context), getTextColor(context), getThemeFillColor(context));
+                    icon = iconsHandler.getDrawableForContact(pojo, pojo.icon, getBackgroundColor(context), getTextColor(context), getThemeFillColor(context));
                 }
             }
         }
         return icon;
-    }
-
-    @Override
-    public void inflateFavorite(@NonNull Context context, @NonNull View favoriteView) {
-        Drawable drawable = getDrawable(context);
-        ImageView favoriteImage = favoriteView.findViewById(R.id.favorite);
-        favoriteImage.setImageDrawable(drawable);
-        favoriteView.setContentDescription(pojo.getName());
     }
 
     private void launchContactView(Context context, View v) {

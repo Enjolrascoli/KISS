@@ -20,10 +20,7 @@
     <string name="ui_excluded_from_history_apps">Xem hoặc chỉnh sửa các ứng dụng bị loại trừ khỏi lịch sử</string>
     <string name="ui_excluded_apps">Xem hoặc chỉnh sửa các ứng dụng bị loại trừ khỏi KISS</string>
     <string name="settings_excluded_apps">Ứng dụng bị loại trừ</string>
-    <string name="reset_excluded_from_history_apps_warn">Bạn có muốn thiết lập lại danh sách ứng dụng đã bị loại trừ không\?</string>
     <string name="reset_excluded_apps_warn">Bạn có thực sự muốn đặt lại danh sách ứng dụng đã loại trừ không\?</string>
-    <string name="reset_excluded_apps_name">Đặt lại danh sách ứng dụng được loại trừ khỏi KISS</string>
-    <string name="reset_excluded_from_history_apps_name">Đặt lại danh sách ứng dụng được loại trừ khỏi lịch sử</string>
     <string name="reset_name">Đặt lại lịch sử</string>
     <string name="main_kiss">Hiển thị danh sách ứng dụng</string>
     <string name="main_clear">Làm sạch thanh tìm kiếm</string>
@@ -48,8 +45,6 @@
     <string name="title_history">Cài đặt lịch sử</string>
     <string name="ui_item_contact_hint_call">Gọi</string>
     <string name="ui_item_contact_hint_message">Tin nhắn</string>
-    <string name="title_advanced">Cài đặt nâng cao</string>
-    <string name="title_ui">Giao diện</string>
     <string name="ui_item_phone">Gọi “%s”</string>
     <string name="ui_item_visit">Truy cập “%1$s”</string>
     <string name="ui_item_search">Tìm \"%2$s\" trong %1$s</string>
@@ -57,7 +52,6 @@
     <string name="activity_setting">Cài đặt của KISS</string>
     <string name="contacts_shape_summary">Hình dạng biểu tượng của danh bạ</string>
     <string name="contact_pack_mask">Hình dạng biểu tượng của danh bạ</string>
-    <string name="contact_pack_mask_summary">Áp dụng mặt nạ của gói biểu tượng với danh bạ</string>
     <string name="force_shape_summary">Sử dụng mặt nạ thích ứng cho các biểu tượng không có chức năng này</string>
     <string name="force_shape">Hình dạng nền bắt buộc</string>
     <string name="force_adaptive_summary">Giảm tỷ lệ và dùng nền trắng cho các biểu tượng không có chức năng thích ứng</string>
@@ -65,7 +59,6 @@
     <string name="adaptive_shape_name">Hình dạng nền cho các biểu tượng</string>
     <string name="contacts_shape">Hình dạng danh bạ</string>
     <string name="custom_name_rename">Đổi tên</string>
-    <string name="show_subicons">Hiện biểu tượng cho các lối tắt</string>
     <string name="gesture_notifications">Hiển thị ngăn thông báo</string>
     <string name="gesture_keyboard">Hiển thị bàn phím</string>
     <string name="gesture_do_nothing">Không sử dụng</string>
@@ -80,7 +73,6 @@
     <string name="theme_customize_enabled">Bật</string>
     <string name="theme_customize_disabled">Tắt</string>
     <string name="theme_shadow">Đường viền văn bản (bóng)</string>
-    <string name="theme_customisation">Chủ đề tùy chỉnh nâng cao</string>
     <string name="custom_icon_preview">Xem trước</string>
     <string name="custom_icon_hint">Lọc theo tên</string>
     <string name="enable_double_tap_to_lock">Để kích hoạt chế độ khóa màn hình bằng thao tác nhấn-đúp, bạn cần cấp thêm quyền. Hãy bật KISS trong màn hình sau.</string>
@@ -182,8 +174,6 @@
     <string name="title_wallpaper">Tương tác với hình nền động</string>
     <string name="history_favorites_summary">Thiết lập lại mục yêu thích, loại bỏ thanh yêu thích,…</string>
     <string name="title_favorites">Cài đặt yêu thích</string>
-    <string name="user_experience_summary">Giao diện tối giản, cài đặt bàn phím,…</string>
-    <string name="title_ux">Trải nghiệm người dùng</string>
     <string name="providers_summary">Điều chỉnh kết quả tìm kiếm, thêm công cụ tìm kiếm tùy chỉnh,…</string>
     <string name="rate_the_app">Đánh giá ứng dụng</string>
     <string name="swap_kiss_button_with_menu">Đặt nút KISS bên phải</string>
@@ -197,17 +187,12 @@
     <string name="color_transparent">Trong suốt</string>
     <string name="notification_bar_color">Màu thanh thông báo</string>
     <string name="main_color">Màu chính</string>
-    <string name="number_of_display_items">Kết quả tối đa trong mục lịch sử và tìm kiếm</string>
     <string name="share">Chia sẻ với…</string>
     <string name="menu_favorites_remove">Loại bỏ yêu thích</string>
     <string name="toast_favorites_removed">Đã loại bỏ \"%s\" khỏi yêu thích</string>
-    <string name="misc">Linh tinh</string>
-    <string name="keyboard_options">Tùy chọn bàn phím</string>
     <string name="restart_name">Tái khởi động KISS</string>
     <string name="pref_hide_circle_desc">Các nút vẫn tiếp tục hoạt động trong trạng thái trong suốt.</string>
     <string name="restart_desc">Khắc phục sự cố với chủ đề và lỗi khiến danh bạ mới không được hiển thị</string>
-    <string name="pref_hide_navbar_desc">Ẩn thanh điều hướng và kích hoạt chế độ immersive</string>
-    <string name="pref_hide_statusbar_desc">Ẩn thanh thông báo và kích hoạt chế độ immersive</string>
     <string name="pref_hide_statusbar">Ẩn thanh trạng thái</string>
     <string name="enable_favorites_bar">Hiện yêu thích trong thanh tìm kiếm</string>
     <string name="enable_app">Hiện ứng dụng mới cài đặt</string>
@@ -249,7 +234,6 @@
     <string name="alias_contacts">danhba,nguoi,quanhe</string>
     <string name="root_mode_error">Không thu được quyền truy cập ưu tiên (root).</string>
     <string name="root_mode_name">Chế độ root</string>
-    <string name="history_mode_desc">Tuyển chọn chế độ sắp xếp lịch sử</string>
     <string name="history_mode_name">Chế độ lịch sử</string>
     <string name="search_provider_error_url">Vui lòng sử dụng URL hợp lệ</string>
     <string name="search_provider_error_char">Vui lòng không dùng ký tự |</string>
@@ -272,7 +256,6 @@
     <string name="export_settings">Xuất cài đặt và thẻ</string>
     <string name="clipboard_warning_dialog">Điều này sẽ ghi đè nội dung khay nhớ tạm của bạn.</string>
     <string name="loading">Đang tải…</string>
-    <string name="title_import_export">Nhập &amp; xuất</string>
     <string name="theme_bar_color">Thanh yêu thích và màu thanh Tìm kiếm</string>
     <string name="gesture_homescreen">Đi đến màn hình</string>
     <string name="shape_teardrop_top_right">Giọt nước góc trên bên phải</string>
