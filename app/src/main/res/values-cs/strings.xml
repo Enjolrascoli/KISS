@@ -6,7 +6,6 @@
     <string name="ui_item_phone">Volat “%s”</string>
     <string name="ui_item_contact_hint_message">Zpráva</string>
     <string name="ui_item_contact_hint_call">Hovor</string>
-    <string name="title_ui">Uživatelské rozhraní</string>
     <string name="title_history">Historie</string>
     <string name="title_providers">Vyhledávání</string>
     <string name="menu_settings">Nastavení zařízení…</string>
@@ -32,16 +31,12 @@
     <string name="color_swatch_description">Barva %1$d</string>
     <string name="color_swatch_description_selected">Barva %1$d byla vybrána</string>
     <string name="ui_item_visit">Navštívit “%1$s”</string>
-    <string name="title_advanced">Pokročilé</string>
     <string name="ui_empty_1">Začít hledat</string>
     <string name="ui_empty_3_sub">Spouštěč KISS se učí z vašich zvyků</string>
     <string name="shortcuts_name">Zkratky</string>
     <string name="main_kiss">Zobrazit seznam aplikací</string>
     <string name="reset_name">Vynulovat historii</string>
-    <string name="reset_excluded_apps_name">Obnovit seznam skrytých aplikací z KISS</string>
     <string name="reset_excluded_apps_warn">Opravdu chcete obnovit skryté aplikace?</string>
-    <string name="reset_excluded_from_history_apps_name">Obnovit seznam skrytých aplikací v historii</string>
-    <string name="reset_excluded_from_history_apps_warn">Opravdu chcete obnovit vyloučené ze seznamu programů historie\?</string>
     <string name="settings_excluded_apps">Skryté aplikace</string>
     <string name="ui_excluded_apps">Zobrazit nebo upravit skryté aplikace z KISS</string>
     <string name="ui_excluded_from_history_apps">Zobrazit nebo upravit skryté aplikace z historie</string>
@@ -84,12 +79,10 @@
     <string name="restart_warn">Opravdu chcete restartovat KISS\? Pokud KISS není váš výchozí spouštěč, aplikace se pouze vypne.</string>
     <string name="freeze_history_warn">Opravdu chcete zmrazit historii a vypnout další aktualizace? Vaše historie zůstane neměnná.</string>
     <string name="search_providers_title">Vybrat vyhledávač</string>
-    <string name="history_mode_desc">Vyberte, jak by měla být historie seřazena</string>
     <string name="menu_shortcut_remove">Odstranit zkratku</string>
     <string name="settings_storage">Úložiště</string>
     <string name="settings_dev">Nastavení pro vývojáře</string>
     <string name="settings_accessibility">Přístupnost</string>
-    <string name="keyboard_options">Nastavení klávesnice</string>
     <string name="settings_sound">Zvuk a hlasitost</string>
     <string name="settings_display">Zobrazení</string>
     <string name="toast_favorites_removed">%s bylo odebráno z oblíbených</string>
@@ -107,7 +100,6 @@
     <string name="search_provider_error_char">Prosím nepoužívejte znak |</string>
     <string name="search_provider_error_url">Prosím, použíjte platnou URL</string>
     <string name="search_provider_error_exists">Poskytovatel s daným jménem již existuje</string>
-    <string name="number_of_display_items">Maximální počet výsledků ve vyhledávání a historii</string>
     <string name="providers_summary">Upravit výsledky vyhledávání, přidat vlastní vyhledávací engine, …</string>
     <string name="unable_to_initialize_shortcuts">Nepodařily se inicializovat zkratky. Je KISS váš výchozí spouštěč\?</string>
     <string name="pref_hide_circle_desc">Tlačítka budou stále fungovat, ale budou neviditelná.</string>
@@ -138,7 +130,6 @@
     <string name="title_wallpaper">Interakce s živou tapetou</string>
     <string name="history_favorites_summary">Resetovat oblíbené, odebrat panel oblíbených, …</string>
     <string name="title_favorites">Oblíbené</string>
-    <string name="user_experience_summary">Minimalistické UI, nastavení klávesnice, …</string>
     <string name="user_interface_summary">Motivy, průhlednost a barvy</string>
     <string name="history_settings_summary">Resetovat historii, zmrazit ji, …</string>
     <string name="rate_the_app">Ohodnotit aplikaci</string>
@@ -155,7 +146,6 @@
     <string name="color_transparent_dark">Průhledně tmavá</string>
     <string name="notification_bar_color">Barva notifikační lišty</string>
     <string name="menu_favorites_remove">Odebrat z oblíbených</string>
-    <string name="misc">Různé</string>
     <string name="alternate_history_inputs">Alternativní zdroje pro historii</string>
     <string name="restart_desc">Opravit problémy s motivem a chybějícími novými kontakty</string>
     <string name="pref_hide_circle">Skrýt kolečko KISS a tří tečkové menu</string>
@@ -197,12 +187,8 @@
     <string name="cant_pin_shortcut">Nepodařilo se přidat zástupce. Je KISS váš výchozí launcher\?</string>
     <string name="notification_dialog">Pro zapnutí zaškrtněte KISS v následujícím menu.</string>
     <string name="notification_support">Zobrazit puntík u aplikací s notifikacemi</string>
-    <string name="pref_hide_statusbar_desc">Skrýt notifikační lištu a zapnout celoobrazovkový režim</string>
     <string name="pref_hide_statusbar">Skrýt horní lištu</string>
-    <string name="pref_hide_navbar_desc">Skrýt navigační lištu a zapnout celoobrazovkový režim</string>
     <string name="ui_item_open">Otevřít “%1$s”</string>
-    <string name="reset_excluded_app_shortcuts_name">Obnovit seznam skrytých zástupců aplikací</string>
-    <string name="reset_excluded_app_shortcuts_warn">Opravdu chcete resetovat seznam aplikací, u kterých se nezobrazují zástupce?</string>
     <string name="ui_excluded_from_shortcuts_apps">Zobrazit nebo upravit aplikace se skrytými zástupci</string>
     <string name="history_onkeyboard_name">Zobrazovat historii společně s klávesnicí</string>
     <string name="history_onkeyboard_desc">Zobrazí historii hledání, jakmile se otevře klávesnice</string>
@@ -214,7 +200,6 @@
     <string name="color_system">Systémové barvy</string>
     <string name="large_result_list_margins">Větší okraje seznamu</string>
     <string name="hide_search_bar_hint">Skrýt nápovědu ve vyhledávání</string>
-    <string name="title_ux">Chování aplikace</string>
     <string name="permission_denied">Přístup zamítnut</string>
     <string name="search_provider_default">Výchozí vyhledávač</string>
     <string name="get_help">Nápověda</string>
@@ -235,7 +220,6 @@
     <string name="custom_icon_hint">Filtrovat dle názvu</string>
     <string name="default_icon">Výchozí ikona</string>
     <string name="custom_icon_preview">Náhled</string>
-    <string name="theme_customisation">Pokročilé přizpůsobení motivu</string>
     <string name="theme_shadow">Obrys textu (stín)</string>
     <string name="theme_customize_default">Výchozí nastavení motivu</string>
     <string name="theme_customize_disabled">Vypnutý</string>
@@ -261,7 +245,6 @@
     <string name="gesture_launch_pojo">Otevřít aplikaci…</string>
     <string name="results_size">Velikost výsledků</string>
     <string name="theme_wallpaper">Tapeta</string>
-    <string name="show_subicons">Zobrazit ikonu aplikace u zástupců</string>
     <string name="custom_name_rename">Přejmenovat</string>
     <string name="custom_name_set_default">Výchozí název</string>
     <string name="gesture_long_press_name">Akce při dlouhém stisknutí</string>
@@ -271,7 +254,6 @@
     <string name="force_adaptive_summary">Zmenší neadaptivní ikony a umístí je na bílé pozadí</string>
     <string name="force_shape">Vynutit tvar pozadí</string>
     <string name="force_shape_summary">Použít adaptivní masku u neadaptivních ikon</string>
-    <string name="contact_pack_mask_summary">Použít masku balíčku ikon u kontaktů</string>
     <string name="contact_pack_mask">Tvar ikon kontaktů</string>
     <string name="icons_category">Ikony</string>
     <string name="loading">Načítání…</string>
@@ -309,10 +291,8 @@
     <string name="gesture_hide_keyboard">Skrýt klávesnici</string>
     <string name="gesture_quicksettings">Zobrazit rychlé nastavení</string>
     <string name="tagged_result_sort_mode_default">Výchozí, jako řazení historie</string>
-    <string name="tagged_result_sort_mode_desc">Vyberte, jak řadit výsledky při zobrazení podle tagů</string>
     <string name="tags_category">Tagy</string>
     <string name="pref_result_highlighting">Zvýraznění výsledků hledání</string>
-    <string name="pref_result_highlighting_summary">Určuje způsob zvýraznění shod ve výsledcích.</string>
     <string name="result_highlighting_text_color">Změnit barvu textu</string>
     <string name="result_highlighting_underline">Podtrhnout</string>
     <string name="result_highlighting_bold">Tučně</string>
@@ -321,7 +301,6 @@
     <string name="unlock_private_space">Odemknout Soukromé Místo</string>
     <string name="lock_private_space">Zamknout Soukromé Místo</string>
     <string name="icons_themed_name">Ikony dle motivu</string>
-    <string name="title_import_export">Import a export</string>
     <string name="root_mode_name">Root oprávnění</string>
     <string name="menu_shortcut_pin">Připnout zástupce</string>
     <string name="timer_name">Začít časovač</string>

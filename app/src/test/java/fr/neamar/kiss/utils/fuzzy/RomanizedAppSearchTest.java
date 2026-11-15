@@ -25,14 +25,8 @@ class RomanizedAppSearchTest {
 
     @ParameterizedTest
     @MethodSource("supportedQueries")
-    void legacyFuzzySearchMatchesRomanizedAliases(String query, String searchableName) {
-        assertMatches(new FuzzyScoreV1(normalize(query), false), searchableName);
-    }
-
-    @ParameterizedTest
-    @MethodSource("supportedQueries")
     void fuzzySearchMatchesRomanizedAliases(String query, String searchableName) {
-        assertMatches(new FuzzyScoreV2(normalize(query), false), searchableName);
+        assertMatches(new FuzzyScore(normalize(query), false), searchableName);
     }
 
     private static void assertMatches(FuzzyScore fuzzyScore, String searchableName) {

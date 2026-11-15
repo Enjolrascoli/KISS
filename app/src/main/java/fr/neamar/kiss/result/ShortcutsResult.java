@@ -68,12 +68,7 @@ public class ShortcutsResult extends ResultWithTags<ShortcutPojo> {
             this.setAsyncDrawable(shortcutIcon);
 
             // Prepare
-            if (isSubIconVisible(context)) {
-                appIcon.setVisibility(View.VISIBLE);
-                setAsyncDrawable(appIcon, android.R.color.transparent, false, () -> appDrawable != null, this::getAppDrawable, (drawable) -> appDrawable = drawable);
-            } else {
-                appIcon.setVisibility(View.GONE);
-            }
+            setAsyncDrawable(appIcon, android.R.color.transparent, false, () -> appDrawable != null, this::getAppDrawable, (drawable) -> appDrawable = drawable);
         } else {
             appIcon.setImageDrawable(null);
             shortcutIcon.setImageDrawable(null);
@@ -100,7 +95,7 @@ public class ShortcutsResult extends ResultWithTags<ShortcutPojo> {
                             ComponentName componentName = PackageManagerUtils.getComponentName(context, intent);
                             if (componentName != null) {
                                 UserHandle userHandle = pojo.getUserHandle();
-                                appDrawable = iconsHandler.getDrawableIconForPackage(context, PackageManagerUtils.getLaunchingComponent(context, componentName, userHandle), userHandle);
+                                appDrawable = iconsHandler.getDrawableIconForPackage(PackageManagerUtils.getLaunchingComponent(context, componentName, userHandle), userHandle);
                             }
                         } catch (NullPointerException e) {
                             Log.e(TAG, "Unable to get activity icon for '" + pojo.getName() + "'", e);
@@ -138,7 +133,7 @@ public class ShortcutsResult extends ResultWithTags<ShortcutPojo> {
             synchronized (this) {
                 if (icon == null) {
                     IconsHandler iconsHandler = KissApplication.getApplication(context).getIconsHandler();
-                    icon = iconsHandler.getDrawableIconForShortcut(context, this.pojo, getShortCut(context));
+                    icon = iconsHandler.getDrawableIconForShortcut(this.pojo, getShortCut(context));
                 }
             }
         }
@@ -205,7 +200,7 @@ public class ShortcutsResult extends ResultWithTags<ShortcutPojo> {
             if (shortcutInfo != null && shortcutInfo.getActivity() != null) {
                 UserHandle user = new UserHandle(context, shortcutInfo.getUserHandle());
                 IconsHandler iconsHandler = KissApplication.getApplication(context).getIconsHandler();
-                return iconsHandler.getDrawableIconForPackage(context, shortcutInfo.getActivity(), user);
+                return iconsHandler.getDrawableIconForPackage(shortcutInfo.getActivity(), user);
             }
         }
         return null;

@@ -7,7 +7,6 @@
     <string name="ui_item_search">Auf %1$s nach „%2$s“ suchen</string>
     <string name="ui_item_contact_hint_message">Nachricht</string>
     <string name="ui_item_contact_hint_call">Anrufen</string>
-    <string name="title_ui">Benutzeroberfläche</string>
     <string name="title_history">Verlauf</string>
     <string name="title_providers">Suche</string>
     <string name="menu_settings">Geräteeinstellungen …</string>
@@ -47,7 +46,6 @@
     <string name="menu_app_details">App-Details</string>
     <string name="menu_app_uninstall">Deinstallieren</string>
     <string name="theme_name">Thema</string>
-    <string name="title_advanced">Erweitert</string>
     <string name="root_mode_desc">Falls vorhanden verwenden, um Apps schlafen zu legen</string>
     <string name="root_mode_name">Root-Modus</string>
     <string name="root_mode_error">Root-Rechte konnten nicht erlangt werden.</string>
@@ -65,7 +63,6 @@
     <string name="icons_hide_main">Symbole ausblenden</string>
     <string name="icons_hide_desc">Bei langsamen Geräten nützlich</string>
     <string name="search_providers_title">Web-Suchanbieter auswählen</string>
-    <string name="reset_excluded_apps_name">Liste der aus KISS ausgeschlossenen Apps zurücksetzen</string>
     <string name="reset_excluded_apps_warn">Deine Liste ausgeschlossener Apps wirklich zurücksetzen?</string>
     <string name="excluded_app_list_erased">Liste der ausgeschlossenen Apps geleert.</string>
     <string name="excluded_app_list_added">App aus KISS ausgeschlossen. Kann in den KISS-Einstellungen rückgängig gemacht werden</string>
@@ -94,13 +91,10 @@
     <string name="ui_excluded_apps_dialog_title">Auszuschließende Apps wählen</string>
     <string name="freeze_history_warn">Soll der Verlauf wirklich eingefroren und nicht mehr fortgeschrieben werden? Der Verlauf wird sich nicht mehr ändern.</string>
     <string name="history_mode_name">Sortiermodus</string>
-    <string name="history_mode_desc">Festlegen wie Einträge im Verlauf sortiert werden</string>
     <string name="menu_shortcut_remove">Verknüpfung entfernen</string>
     <string name="menu_shortcut_pin">Verknüpfung anheften</string>
     <string name="settings_storage">Speicher</string>
     <string name="settings_dev">Entwicklereinstellungen</string>
-    <string name="keyboard_options">Tastatureinstellungen</string>
-    <string name="misc">Verschiedenes</string>
     <string name="alternate_history_inputs">Zusätzliche Quellen für Verlaufseinträge</string>
     <string name="settings_accessibility">Bedienungshilfen</string>
     <string name="settings_sound">Klang und Lautstärke</string>
@@ -116,7 +110,6 @@
     <string name="tags_visible">Stichworte zeigen</string>
     <string name="notification_bar_color">Farbe der Benachrichtigungsleiste</string>
     <string name="main_color">Grundfarbe</string>
-    <string name="number_of_display_items">Max. Anzahl an Suchergebnissen und Verlaufseinträgen</string>
     <string name="color_picker_default_title">Farbe auswählen</string>
     <string name="color_swatch_description">Farbe %1$d</string>
     <string name="color_swatch_description_selected">Farbe %1$d ausgewählt</string>
@@ -148,15 +141,11 @@
     <string name="search_provider_error_url">Bitte gib eine gültige URL ein</string>
     <string name="search_provider_error_exists">Ein Suchanbieter mit diesem Namen existiert bereits</string>
     <string name="pref_hide_navbar">Navigationsleiste ausblenden</string>
-    <string name="pref_hide_navbar_desc">Navigationsleiste ausblenden und den „Immersive-Mode“ einschalten</string>
     <string name="pref_hide_statusbar">Statusleiste ausblenden</string>
-    <string name="pref_hide_statusbar_desc">Benachrichtigungsleiste ausblenden und den „Immersive-Mode“ einschalten</string>
     <string name="rate_the_app">App bewerten</string>
     <string name="history_settings_summary">Verlauf zurücksetzen, einfrieren, …</string>
     <string name="user_interface_summary">Thema, Transparenz und Farben</string>
     <string name="providers_summary">Sucheinstellungen verändern, Web-Suchanbieter hinzufügen, …</string>
-    <string name="title_ux">Benutzererlebnis</string>
-    <string name="user_experience_summary">Reduzierte Oberfläche, Tastatureinstellungen, …</string>
     <string name="title_favorites">Favoriten</string>
     <string name="history_favorites_summary">Favoriten zurücksetzen, Favoritenleiste ausblenden, …</string>
     <string name="title_wallpaper">Live-Hintergrund Interaktion</string>
@@ -187,8 +176,6 @@
     <string name="pref_show_untagged">Auflisten stichwortloser Apps</string>
     <string name="pref_hide_circle">KISS-Symbol und Drei-Punkte-Menü ausblenden</string>
     <string name="pref_hide_circle_desc">Funktionen bleiben weiterhin verfügbar, sind aber nicht sichtbar.</string>
-    <string name="reset_excluded_from_history_apps_name">Liste der aus dem Verlauf ausgeschlossenen Apps zurücksetzen</string>
-    <string name="reset_excluded_from_history_apps_warn">Deine Liste der aus dem Verlauf ausgeschlossenen Apps wirklich zurücksetzen?</string>
     <string name="settings_excluded_apps">Ausgeschlossene Einträge</string>
     <string name="ui_excluded_from_history_apps">Aus dem Verlauf ausgeschlossene Apps bearbeiten</string>
     <string name="excluded_app_history_added">App aus dem Verlauf ausgeschlossen. Kann in den KISS-Einstellungen rückgängig gemacht werden</string>
@@ -222,7 +209,6 @@
     <string name="lock_service_description">Bildschirm in KISS Launcher sperren</string>
     <string name="double_tap_to_lock">Zweimaliges Tippen zum Sperren</string>
     <string name="gestures">Gesten</string>
-    <string name="show_subicons">Anwendungssymbole auf Verknüpfungen anzeigen</string>
     <string name="theme_separator">Suchergebnistrennstrich</string>
     <string name="gesture_history">Verlauf anzeigen</string>
     <string name="gesture_apps">Anwendungliste anzeigen</string>
@@ -246,7 +232,6 @@
     <string name="theme_customize_disabled">Deaktiviert</string>
     <string name="theme_customize_default">Thema-Standard</string>
     <string name="theme_shadow">Schriftkontur (Schatten)</string>
-    <string name="theme_customisation">Erweiterte Thema-Anpassung</string>
     <string name="hide_search_bar_hint">Suchleisten-Hinweistext ausblenden</string>
     <string name="theme_wallpaper">Hintergrundbild</string>
     <string name="gesture_right_name">Aktion für nach rechts wischen</string>
@@ -257,7 +242,6 @@
     <string name="icons_category">Symbole</string>
     <string name="contacts_shape_summary">Form des Kontaktsymbols</string>
     <string name="contact_pack_mask">Kontaktsymbole verformen</string>
-    <string name="contact_pack_mask_summary">Maskierung des Symbolpaketes für Kontakte verwenden</string>
     <string name="force_shape_summary">Adaptive Maskierung bei nicht-adaptiven Symbolen verwenden</string>
     <string name="force_shape">Hintergrundform erzwingen</string>
     <string name="force_adaptive_summary">Nicht-adaptive Symbole verkleinern und auf weißem Hintergrund anzeigen</string>
@@ -277,7 +261,6 @@
     <string name="import_settings">Einstellungen und Stichworte importieren</string>
     <string name="export_settings">Einstellungen und Stichworte exportieren</string>
     <string name="clipboard_warning_dialog">Dadurch wird der Inhalt der Zwischenablage überschrieben.</string>
-    <string name="title_import_export">Import und Export</string>
     <string name="theme_bar_color">Farbe der Favoritenleiste und Suchleiste</string>
     <string name="gesture_homescreen">Zu Startbildschirm gehen</string>
     <string name="adaptive_shape_summary">Hintergrundform für Anwendungssymbole</string>
@@ -301,9 +284,7 @@
     <string name="gesture_launch_pojo">Starte…</string>
     <string name="always_default_web_search_on_enter">Bei einer Eingabe immer den Standard-Websuchanbieter aufrufen</string>
     <string name="results_size">Größe der Ergebnisse</string>
-    <string name="reset_excluded_app_shortcuts_warn">Deine Liste der Apps, für die keine Verknüpfungen angezeigt werden sollen, wirklich zurücksetzen?</string>
     <string name="large_result_list_margins">Größere Listenränder</string>
-    <string name="reset_excluded_app_shortcuts_name">Liste der Apps zurücksetzen, für die keine Verknüpfungen angezeigt werden sollen</string>
     <string name="ui_excluded_from_shortcuts_apps">Apps bearbeiten, für die keine Verknüpfungen angezeigt werden sollen</string>
     <string name="icons_themed_name">Symboldesigns</string>
     <string name="icons_themed_summary">Symbole werden mit Systemfarben eingefärbt (beta)</string>
@@ -325,7 +306,6 @@
     <string name="tags_category">Stichworte</string>
     <string name="tagged_result_sort_mode_name">Sortiermodus für Ergebnisse mit Stichworten</string>
     <string name="tagged_result_sort_mode_default">Standard, wie Sortiermodus</string>
-    <string name="tagged_result_sort_mode_desc">Auswählen, wie die Ergebnisse sortiert werden sollen, wenn sie nach Stichworten angezeigt werden</string>
     <string name="unlock_private_space">Vertrauliches Profil entsperren</string>
     <string name="lock_private_space">Vertrauliches Profil sperren</string>
     <string name="shared_text_empty">Ups… der Text ist leer.</string>
@@ -334,7 +314,6 @@
     <string name="results_size_large">Groß</string>
     <string name="history_time">Zur Tageszeit verwendete zuerst</string>
     <string name="pref_result_highlighting">Suchergebnis hervorheben</string>
-    <string name="pref_result_highlighting_summary">Legt fest, wie Treffer in den Suchergebnissen hervorgehoben werden.</string>
     <string name="result_highlighting_text_color">Textfarbe ändern</string>
     <string name="result_highlighting_underline">Unterstreichen</string>
     <string name="result_highlighting_bold">Fett</string>

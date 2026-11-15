@@ -27,11 +27,8 @@
     <string name="pref_fav_tags_drawable">Generer ikoner til foretrukne etiketter</string>
     <string name="pref_fav_tags_drawable_desc">Slå fra for at bruge mindre hukommelse på mange fortrukne etiketter</string>
     <string name="ui_empty_1_sub">Apps, kontakter, indstillinger, …</string>
-    <string name="title_ui">Brugergrænseflade</string>
     <string name="title_history">Historikindstillinger</string>
     <string name="title_providers">Søgeindstillinger</string>
-    <string name="title_import_export">Import og eksport</string>
-    <string name="title_advanced">Avancerede indstillinger</string>
     <string name="menu_settings">Enhedsindstillinger…</string>
     <string name="ui_empty_1">Begynd at søge efter hvad som helst</string>
     <string name="ui_empty_2">Se altid din historik</string>
@@ -42,15 +39,10 @@
     <string name="contacts_name">Kontakter</string>
     <string name="shortcuts_name">Genveje</string>
     <string name="main_kiss">Vis liste med apps</string>
-    <string name="reset_excluded_from_history_apps_name">Nulstil liste over apps, der er ekskluderet fra historikken</string>
     <string name="main_clear">Ryd søgefeltet</string>
     <string name="main_kiss_back">Vis historik</string>
     <string name="reset_name">Nulstil historik</string>
-    <string name="reset_excluded_apps_name">Nulstil listen over apps, der er ekskluderet fra KISS</string>
     <string name="reset_excluded_apps_warn">Ønsker du virkelig at nulstille din liste over ekskluderede apps?</string>
-    <string name="reset_excluded_from_history_apps_warn">Ønsker du virkelig at nulstille din liste over apps ekskluderet fra historikken?</string>
-    <string name="reset_excluded_app_shortcuts_name">Nulstil liste over apps, der er ekskluderet fra at vise genveje</string>
-    <string name="reset_excluded_app_shortcuts_warn">Ønsker du virkelig at nulstille din liste over apps, der er ekskluderet fra at vise genveje?</string>
     <string name="settings_excluded_apps">Ekskluderede apps</string>
     <string name="ui_excluded_apps">Vis eller ret apps, der er ekskluderet fra KISS</string>
     <string name="ui_excluded_from_history_apps">Vis eller ret apps, der er ekskluderet fra historikken</string>
@@ -96,7 +88,6 @@
     <string name="search_provider_error_uri_cannot_be_handle">Den angivne URL kan ikke håndteres af nogen app på din enhed</string>
     <string name="search_provider_error_exists">En udbyder med dette navn findes allerede</string>
     <string name="history_mode_name">Historik tilstand</string>
-    <string name="history_mode_desc">Vælg hvordan historikken skal sorteres</string>
     <string name="root_mode_desc">Hvis anvendeligt, kan det bruges til at lægge apps i dvaletilstant</string>
     <string name="alias_contacts">kontakter,mennesker,relationer</string>
     <string name="root_mode_error">Kan ikke opnå root-tilladelser</string>
@@ -162,9 +153,7 @@
 \n
 \nHvis ikke KISS er indstillet til at være din standard appstarter, vil appen bare lukke.</string>
     <string name="favorites_hide">Skjul bjælken med foretrukne i første omgang</string>
-    <string name="pref_hide_navbar_desc">Skjul navigationsbjælken og slå omslutningstilstand til</string>
     <string name="pref_hide_statusbar">Skjul statuslinjen</string>
-    <string name="pref_hide_statusbar_desc">Skjul notifikationslinjen og slå omslutningstilstand til</string>
     <string name="pref_hide_circle">Skjul KISS-cirken og trepriksmenuen</string>
     <string name="pref_hide_circle_desc">Knapperne er stadig aktive, men de vil være usynlige</string>
     <string name="restart_desc">Løs problemer med tema og nye kontakter, der ikke vises</string>
@@ -173,13 +162,10 @@
     <string name="default_launcher_title">Skift standard appstarter</string>
     <string name="items_title" tools:ignore="PluralsCandidate">%d emner</string>
     <string name="toast_favorites_removed">%s blev fjernet fra foretrukne</string>
-    <string name="keyboard_options">Tastaturindstillinger</string>
     <string name="alternate_history_inputs">Alternative kilder til historik</string>
-    <string name="misc">Diverse</string>
     <string name="color_transparent_white">Lys og gennemsigtig</string>
     <string name="menu_favorites_remove">Fjern foretrukken</string>
     <string name="share">Del med…</string>
-    <string name="number_of_display_items">Maks. antal resultater i søgning og historik</string>
     <string name="notification_bar_color">Farve på notifikationslinjen</string>
     <string name="color_transparent_dark">Mørk og gennemsigtig</string>
     <string name="color_transparent">Gennemsigtig</string>
@@ -196,14 +182,12 @@
     <string name="rounded_bars">Afrundede bjælkehjørner</string>
     <string name="swap_kiss_button_with_menu">Placer KISS-knappen på højre side</string>
     <string name="user_interface_summary">Temaer, gennemsigtighed og farver</string>
-    <string name="user_experience_summary">Minimalistisk BGF, tastaturindstillinger, …</string>
     <string name="history_favorites_summary">Nulstil dine foretrukne, fjern bjælken med foretrukne, …</string>
     <string name="rate_the_app">Bedøm appen</string>
     <string name="history_settings_summary">Nulstil historikken, frys den, …</string>
     <string name="providers_summary">Juster søgeresultater, tilføj brugerderfinerede søgemaskiner, …</string>
     <string name="title_wallpaper">Interaktioner med bevægelige baggrunde</string>
     <string name="menu_widget_remove">Fjern widget</string>
-    <string name="title_ux">Brugeroplevelse</string>
     <string name="title_favorites">Indstillinger for foretrukne</string>
     <string name="menu_size_up">Forstør</string>
     <string name="shortcuts_no_host_permission">KISS er ikke din standard appstarter længere, og kan ikke tilgå dine genveje.</string>
@@ -259,7 +243,6 @@
     <string name="gesture_apps">Vis appliste</string>
     <string name="gesture_homescreen">Gå til hovedmenuen</string>
     <string name="theme_wallpaper">Baggrund</string>
-    <string name="show_subicons">Vis appikon på genveje</string>
     <string name="custom_name_rename">Omdøb</string>
     <string name="custom_name_set_default">Standardnavn</string>
     <string name="gesture_long_press_name">Handling ved længere tryk</string>
@@ -300,7 +283,6 @@
     <string name="results_size_smallest">Mindste</string>
     <string name="gesture_hide_keyboard">Skjul tastatur</string>
     <string name="tagged_result_sort_mode_default">Standard, som historiktilstand</string>
-    <string name="theme_customisation">Avanceret brugertilpasning af tema</string>
     <string name="theme_result_color">Farve på søgeresultaters tekst</string>
     <string name="theme_semi_transparent_dark">Mørk og halvgennemsigtig</string>
     <string name="theme_separator">Seperator mellem søgeresultater</string>
@@ -312,7 +294,6 @@
     <string name="gesture_launch_pojo">Start…</string>
     <string name="results_size">Størrelse på søgeresultater</string>
     <string name="force_adaptive_summary">Reducer ikke-adaptive ikoners størrelse, og placer dem på en hvid baggrund</string>
-    <string name="contact_pack_mask_summary">Benyt maske fra ikonpakke på kontakters ikoner</string>
     <string name="icons_category">Ikoner</string>
     <string name="loading">Indlæser…</string>
     <string name="export_settings">Eksporter indstillinger og etiketter</string>
@@ -326,6 +307,5 @@
     <string name="gesture_menu">Vis menu</string>
     <string name="gesture_quicksettings">Vis hurtigindstillingerne</string>
     <string name="tagged_result_sort_mode_name">Sortering af etiketsøgning</string>
-    <string name="tagged_result_sort_mode_desc">Vælg hvordan søgeresulater skal sorteres, når de vises i henhold til etiketter</string>
     <string name="tags_category">Etiketter</string>
 </resources>
