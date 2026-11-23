@@ -132,7 +132,7 @@
     <string name="search_provider_reset_done_desc">搜索提供者列表已重置</string>
     <string name="search_provider_name">提供者名称</string>
     <string name="search_provider_added">搜索提供者已添加。</string>
-    <string name="search_provider_deleted">搜索提供者已删除。</string>
+    <string name="search_provider_deleted">删除了搜索引擎。</string>
     <string name="search_provider_error_char">请勿使用 | 字符</string>
     <string name="search_provider_error_placeholder">请使用 %s 代表搜索内容</string>
     <string name="search_provider_error_url">请提供一个有效的 URL</string>
@@ -191,14 +191,11 @@
     <string name="regenerate_shortcuts_desc">您要重置快捷方式列表吗？</string>
     <string name="regenerate_shortcuts_done">快捷方式已被重置</string>
     <string name="pref_fav_tags_select">收藏栏中要显示的标签</string>
-    <string name="pref_fav_tags_drawable_desc">在收藏栏显示大量标签会占用更多内存</string>
-    <string name="pref_fav_tags_drawable">生成收藏标签图标</string>
     <string name="menu_app_store">在商店中查看</string>
     <string name="menu_widget_move_down">下移</string>
     <string name="menu_widget_move_up">抬高</string>
     <string name="menu_size_up">放大</string>
     <string name="menu_size_down">减小</string>
-    <string name="large_favorites_bar">使用更大的收藏栏</string>
     <string name="double_tap_to_lock">点按两次锁定屏幕</string>
     <string name="enable_double_tap_to_lock">双击锁定需要 Android Accessibility API。 不处理任何数据，也不存储任何数据。 要使用此功能，请在以下屏幕中启用 KISS。</string>
     <string name="gesture_down_name">下滑操作</string>
@@ -213,7 +210,7 @@
     <string name="history_alphabetically">字母顺序</string>
     <string name="history_adaptive">适应用户使用</string>
     <string name="history_frequency">访问频率</string>
-    <string name="history_frecency">近期访问频率</string>
+    <string name="history_frecency">经常且最近访问</string>
     <string name="history_recency">最近访问优先</string>
     <string name="theme_result_color">结果的文本颜色</string>
     <string name="theme_separator">结果分隔器</string>
@@ -238,8 +235,8 @@
     <string name="contact_pack_mask">联系人使用图标包形状</string>
     <string name="force_shape_summary">在非自适应图标上使用自适应蒙版</string>
     <string name="force_shape">裁剪旧图标使其适应形状</string>
-    <string name="force_adaptive_summary">对于非自适应图标，缩小比例并放置在白色背景上</string>
-    <string name="force_adaptive">旧图标使用白色背景</string>
+    <string name="force_adaptive_summary">对于非自适应图标，缩小比例并放置在纯色背景上</string>
+    <string name="force_adaptive">旧图标使用纯色背景</string>
     <string name="adaptive_shape_name">图标的背景形状</string>
     <string name="custom_name_set_default">默认名称</string>
     <string name="custom_name_rename">重命名</string>
@@ -285,7 +282,7 @@
     <string name="icons_themed_name">主题图标</string>
     <string name="icons_themed_summary">用系统颜色对图标进行着色</string>
     <string name="menu_shortcut_pin">固定快捷方式</string>
-    <string name="search_provider_error_uri_cannot_be_handle">提供的 URI 无法被你设备上的任何应用所处理。</string>
+    <string name="search_provider_error_uri_cannot_be_handle">设备上没有应用能处理这个 URI。</string>
     <string name="import_settings_done">已导入设置。</string>
     <string name="gesture_menu">显示菜单</string>
     <string name="import_settings_error">无法导入设置。</string>

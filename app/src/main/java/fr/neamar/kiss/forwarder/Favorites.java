@@ -6,7 +6,6 @@ import static androidx.recyclerview.widget.ItemTouchHelper.ACTION_STATE_IDLE;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Canvas;
 import android.net.Uri;
@@ -20,7 +19,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
@@ -62,6 +60,7 @@ public class Favorites extends Forwarder {
         private final List<Result<?>> results = new ArrayList<>();
         private OnItemClickListener mOnItemClickListener = null;
         private OnItemLongClickListener mOnItemLongClickListener = null;
+        private int itemHeight = ViewGroup.LayoutParams.MATCH_PARENT;
 
         public FavoriteAdapter() {
             super();
@@ -121,13 +120,7 @@ public class Favorites extends Forwarder {
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            int layout = R.layout.favorite_item;
-            if (viewType == 6) {
-                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(parent.getContext());
-                if (!sharedPreferences.getBoolean("pref-fav-tags-drawable", false)) {
-                    layout = R.layout.favorite_tag;
-                }
-            }
+            int layout = viewType == 6 ? R.layout.favorite_tag : R.layout.favorite_item;
 
             View view = LayoutInflater.from(parent.getContext()).inflate(layout, parent, false);
             return new ViewHolder(view);
@@ -136,6 +129,7 @@ public class Favorites extends Forwarder {
         @Override
         public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
             Result<?> result = getItem(position);
+            holder.itemView.getLayoutParams().height = itemHeight;
             holder.inflateFavorite(result);
             holder.itemView.setOnClickListener(v -> {
                 if (mOnItemClickListener != null) {
@@ -180,6 +174,10 @@ public class Favorites extends Forwarder {
         @Override
         public int getMovementFlags(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
             int dragFlags = ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
+            if (((GridLayoutManager) recyclerView.getLayoutManager()).getSpanCount() < mAdapter.getItemCount()) {
+                // more than one row
+                dragFlags |= ItemTouchHelper.UP | ItemTouchHelper.DOWN;
+            }
             return makeMovementFlags(dragFlags, 0);
         }
 
@@ -275,9 +273,18 @@ public class Favorites extends Forwarder {
         List<Pojo> favoritesPojo = KissApplication.getApplication(mainActivity).getDataHandler().getFavorites();
         int favSize = favoritesPojo.size();
 
+        int rows = 1;
         RecyclerView favoritesBar = mainActivity.favoritesBar;
+        if (isExternalFavoriteBarEnabled()) {
+            int perRow = Integer.parseInt(prefs.getString("favorites-per-row", "10"));
+            rows = Math.max((favSize + perRow - 1) / perRow, 1);
+            int rowHeight = mainActivity.getResources().getDimensionPixelSize(getRowHeightDimen());
+            favoritesBar.getLayoutParams().height = rowHeight * rows;
+            favoritesBar.requestLayout();
+            favoriteAdapter.itemHeight = rows > 1 ? rowHeight : ViewGroup.LayoutParams.MATCH_PARENT;
+        }
         if (favoritesBar.getLayoutManager() instanceof GridLayoutManager) {
-            ((GridLayoutManager) favoritesBar.getLayoutManager()).setSpanCount(Math.max(favSize, 1));
+            ((GridLayoutManager) favoritesBar.getLayoutManager()).setSpanCount(Math.max((favSize + rows - 1) / rows, 1));
         }
         favoriteAdapter.setFavorites(favoritesPojo.stream().map(pojo -> Result.fromPojo(mainActivity, pojo)).collect(Collectors.toList()));
     }
@@ -292,6 +299,17 @@ public class Favorites extends Forwarder {
         mainActivity.registerPopup(popup);
         popup.show(v);
         return true;
+    }
+
+    private int getRowHeightDimen() {
+        switch (prefs.getString("favorites-bar-size", "medium")) {
+            case "small":
+                return R.dimen.small_favorite_height;
+            case "large":
+                return R.dimen.large_favorite_height;
+            default:
+                return R.dimen.favorite_height;
+        }
     }
 
     private boolean isExternalFavoriteBarEnabled() {
@@ -351,4 +369,3 @@ public class Favorites extends Forwarder {
     }
 
 }
-

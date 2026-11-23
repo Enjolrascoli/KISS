@@ -66,7 +66,6 @@ cp "$notes" app/src/main/play/release-notes/en-US/default.txt
 ./gradlew publishReleaseBundle --track beta
 # The API can't send changes for review: they wait in the Play Console publishing overview
 overview="https://play.google.com/console/developers/5374610066447948540/app/4974646048372599885/publishing"
-echo "Send the changes for review: $overview"
 xdg-open "$overview" >/dev/null 2>&1 || true
 
 git push origin "$branch" "v$name"
@@ -77,11 +76,20 @@ gh release create "v$name" --title "v$name" --notes-file "$notes" "$apk"
 
 if [[ -n ${TELEGRAM_BOT_TOKEN:-} ]]; then
     # Strip @ from GitHub handles, Telegram would link them to unrelated Telegram users
-    curl -fsS "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+    tg="https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN"
+    sent=$(curl -fsS -m 30 "$tg/sendMessage" \
         --data-urlencode chat_id="${TELEGRAM_CHAT_ID:?}" \
         --data-urlencode text="KISS $name is out on GitHub: https://github.com/Neamar/KISS/releases/tag/v$name
 Play Store and F-Droid will follow in the coming days.
 
 $(sed 's/@//g' "$notes")" \
-        --data-urlencode link_preview_options='{"is_disabled":true}' >/dev/null
+        --data-urlencode link_preview_options='{"is_disabled":true}')
+    message_id=$(grep -o '"message_id":[0-9]*' <<< "$sent" | head -1 | cut -d: -f2)
+    # Needs the bot to be an admin allowed to pin; a failure here must not hide the review warning below
+    { curl -fsS -m 30 "$tg/unpinAllChatMessages" --data-urlencode chat_id="$TELEGRAM_CHAT_ID" >/dev/null &&
+      curl -fsS -m 30 "$tg/pinChatMessage" --data-urlencode chat_id="$TELEGRAM_CHAT_ID" \
+        --data-urlencode message_id="$message_id" --data-urlencode disable_notification=true >/dev/null; } ||
+        echo "WARNING: could not pin the Telegram message" >&2
 fi
+
+echo "WARNING! To finish the release, send the changes for review: $overview"

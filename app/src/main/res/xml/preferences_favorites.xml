@@ -13,15 +13,30 @@
                 android:name="restart"
                 android:value="launcher" />
         </SwitchPreference>
-        <SwitchPreference
-            app:defaultValue="false"
+        <ListPreference
+            app:defaultValue="medium"
             app:dependency="enable-favorites-bar"
-            app:key="large-favorites-bar"
-            app:title="@string/large_favorites_bar">
+            app:entries="@array/favoritesBarSizeEntries"
+            app:entryValues="@array/favoritesBarSizeValues"
+            app:key="favorites-bar-size"
+            app:title="@string/favorites_bar_size"
+            app:useSimpleSummaryProvider="true">
             <extra
                 android:name="restart"
                 android:value="launcher" />
-        </SwitchPreference>
+        </ListPreference>
+        <fr.neamar.kiss.preference.RangeEditTextPreference
+            app:defaultValue="10"
+            app:dependency="enable-favorites-bar"
+            app:key="favorites-per-row"
+            app:minValue="1"
+            app:maxValue="100"
+            app:summary="@string/favorites_per_row_desc"
+            app:title="@string/favorites_per_row">
+            <extra
+                android:name="restart"
+                android:value="launcher" />
+        </fr.neamar.kiss.preference.RangeEditTextPreference>
         <SwitchPreference
             app:defaultValue="true"
             app:key="transparent-favorites"
@@ -34,15 +49,6 @@
             app:defaultValue="@array/favTagsDefault"
             app:key="pref-fav-tags-list"
             app:title="@string/pref_fav_tags_select" />
-        <SwitchPreference
-            app:defaultValue="false"
-            app:key="pref-fav-tags-drawable"
-            app:summary="@string/pref_fav_tags_drawable_desc"
-            app:title="@string/pref_fav_tags_drawable">
-            <extra
-                android:name="restart"
-                android:value="launcher" />
-        </SwitchPreference>
         <SwitchPreference
             app:defaultValue="false"
             app:key="exclude-favorites-apps"
