@@ -122,7 +122,7 @@ public class ExcludeAppSettingsFragment extends BaseSettingsFragment {
                 // Sync apps and switches with the default list, which may not be empty (KISS itself)
                 for (int i = 0; i < apps.length; i++) {
                     boolean excluded = isExcludedInPrefs.apply(apps[i]);
-                    setExcluded.accept(apps[i], excluded);
+                    getDataHandler().updateApp(apps[i], app -> setExcluded.accept(app, excluded));
                     switches[i].setChecked(excluded);
                 }
                 // Shortcuts depend on both the excluded apps and the apps excluded from shortcuts
@@ -145,7 +145,7 @@ public class ExcludeAppSettingsFragment extends BaseSettingsFragment {
         switchPreference.setIcon(R.drawable.ic_launcher_white);
         Utilities.runAsync((task) -> {
             final ComponentName componentName = new ComponentName(app.packageName, app.activityName);
-            return iconsHandler.getDrawableIconForPackage(componentName, app.userHandle);
+            return iconsHandler.getDrawableIconForPackage(context, componentName, app.userHandle);
         }, (task, result) -> {
             if (!task.isCancelled()) {
                 switchPreference.setIcon((Drawable) result);

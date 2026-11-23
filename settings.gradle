@@ -21,3 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "KISS"
 include ':app'
+
+// Keep fork configuration outside upstream's app build script.
+apply from: 'gradle/fork.gradle'

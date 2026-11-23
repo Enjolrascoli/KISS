@@ -1,0 +1,21 @@
+// Apply fork identity and signing after upstream has configured the Android DSL.
+gradle.beforeProject { project ->
+    project.pluginManager.withPlugin('com.android.application') {
+        project.extensions.getByName('androidComponents').finalizeDsl { android ->
+            android.defaultConfig.applicationId = 'fr.neamar.mykiss'
+
+            def releaseStoreFile = System.getenv('KISS_RELEASE_STORE_FILE')
+            def releaseBuildType = android.buildTypes.getByName('release')
+            if (releaseStoreFile) {
+                def forkSigning = android.signingConfigs.maybeCreate('forkRelease')
+                forkSigning.storeFile = project.file(releaseStoreFile)
+                forkSigning.storePassword = System.getenv('KISS_RELEASE_STORE_PASSWORD')
+                forkSigning.keyAlias = System.getenv('KISS_RELEASE_KEY_ALIAS')
+                forkSigning.keyPassword = System.getenv('KISS_RELEASE_KEY_PASSWORD')
+                releaseBuildType.signingConfig = forkSigning
+            } else {
+                releaseBuildType.signingConfig = null
+            }
+        }
+    }
+}

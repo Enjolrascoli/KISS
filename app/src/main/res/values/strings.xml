@@ -239,13 +239,14 @@
     <string name="show_untagged">Show untagged</string>
     <string name="pref_show_untagged">Show \'Untagged\' entry in tags menu</string>
     <string name="unable_to_initialize_shortcuts">Unable to initialize shortcuts. Is KISS your default launcher?</string>
-    <string name="pref_fav_tags_drawable_desc">Turn off to use less memory for many favorite tags</string>
-    <string name="pref_fav_tags_drawable">Generate icons for favorite tags</string>
+    <string name="apps_a_on_top">Show apps from A to Z, top to bottom</string>
     <string name="notification_support">Display a dot on apps with notifications</string>
     <string name="notification_dialog">Check KISS in the following menu to turn it on.</string>
     <string name="cant_pin_shortcut">Could not add shortcut. Is KISS your default launcher\?</string>
     <string name="copy_confirmation">Copied to clipboard</string>
-    <string name="large_favorites_bar">Bigger favorites bar</string>
+    <string name="favorites_bar_size">Favorites bar size</string>
+    <string name="favorites_per_row">Favorites per row</string>
+    <string name="favorites_per_row_desc">When there are more favorites, they are split over several rows</string>
     <string name="menu_size_down">Reduce</string>
     <string name="menu_size_up">Enlarge</string>
     <string name="menu_widget_move_up">Move up</string>
@@ -300,8 +301,8 @@
     <string name="gesture_long_press_name">Action on long press</string>
     <string name="contacts_shape">Contacts shape</string>
     <string name="adaptive_shape_name">Background shape for icons</string>
-    <string name="force_adaptive">White background for old icons</string>
-    <string name="force_adaptive_summary">For non-adaptive icons, reduce scale and place on a white background</string>
+    <string name="force_adaptive">Solid background for old icons</string>
+    <string name="force_adaptive_summary">For non-adaptive icons, reduce scale and place on a solid background</string>
     <string name="force_shape">Crop old icons to shape</string>
     <string name="force_shape_summary">Use adaptive mask on non-adaptive icons</string>
     <string name="contact_pack_mask">Use icon pack shape for contacts</string>
@@ -333,6 +334,7 @@
     <string name="contact_actions_summary">Pick messaging app to use</string>
     <string name="contact_action_left">Left button</string>
     <string name="contact_action_right">Right button</string>
+    <string name="app_list_hint">Press the KISS button in the search bar to display all your apps</string>
     <string name="contact_actions_override_hint">Tip: long press a contact button to change the app for this contact only</string>
     <string name="contact_action_default">Default (%s)</string>
     <string name="contact_action_none">Nothing</string>
@@ -383,6 +385,8 @@
     <string name="shapes">Shapes</string>
     <string name="system_bars">System bars</string>
     <string name="home_screen_summary">Minimalistic UI, system bars, live wallpaper, …</string>
+    <string name="title_app_list">App list</string>
+    <string name="app_list_summary">Order of the list of all apps</string>
     <string name="search_bar_summary">Keyboard behavior, search bar size and buttons, …</string>
     <string name="gestures_summary">Swipes, long press, double tap</string>
     <string name="gestures_hint">Gestures only work with Minimalistic UI, on empty areas of the home screen. Turn on Minimalistic UI in Home screen settings to configure them.</string>

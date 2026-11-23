@@ -22,7 +22,8 @@
 
     <style name="ResultItem">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">?attr/resultHeight</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">?attr/resultHeight</item>
         <item name="android:paddingStart">@dimen/result_margin_left</item>
         <item name="android:paddingLeft">@dimen/result_margin_left</item>
         <item name="android:paddingTop">@dimen/result_margin_top</item>
@@ -50,12 +51,12 @@
     </style>
 
     <style name="OverlayToolbarLightText">
-        <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="actionBarTheme">@style/ThemeOverlay.Material3.Dark.ActionBar</item>
     </style>
 
-    <style name="ToolbarDarkText" parent="ThemeOverlay.AppCompat.Light">
+    <style name="ToolbarDarkText" parent="ThemeOverlay.Material3.ActionBar">
         <item name="colorControlNormal">?android:textColorPrimary</item>
-        <item name="searchViewStyle">@style/Widget.AppCompat.SearchView.ActionBar</item>
+        <item name="searchViewStyle">@style/Widget.Material3.SearchView.Toolbar</item>
     </style>
 
 </resources>

@@ -36,3 +36,11 @@ Keep the original keystore and passwords backed up outside the repository.
 They must never be committed. Losing the key means future APKs cannot update
 the installed app. The signed release uses the private application ID
 `fr.neamar.mykiss` so it can coexist with the official KISS release.
+
+## Fork build configuration
+
+`settings.gradle` loads `gradle/fork.gradle`, which applies the fork's application
+ID and `KISS_RELEASE_*` signing settings after the upstream Android DSL is evaluated.
+This applies to local builds and all CI workflows. Keep `app/build.gradle` identical
+to upstream when merging updates; fork identity and signing belong in the separate
+configuration file so upstream signing changes do not conflict with them.
